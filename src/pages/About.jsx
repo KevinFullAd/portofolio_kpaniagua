@@ -4,11 +4,11 @@ export default function AboutPage({ data }) {
 
             {/* Header */}
             <header className="space-y-4">
-                <h2 className="text-3xl font-semibold text-white">
+                <h2 className="text-3xl font-semibold text-(--text)">
                     {data.intro.title}
                 </h2>
 
-                <div className="space-y-3 text-slate-300 leading-relaxed">
+                <div className="space-y-3 text-(--text-muted) leading-relaxed">
                     {data.intro.paragraphs.map((text, i) => (
                         <p key={i}>{text}</p>
                     ))}

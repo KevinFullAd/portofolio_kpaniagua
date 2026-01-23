@@ -1,14 +1,12 @@
 import { useState } from 'react'
 
-import Sidebar from './layout/Sidebar'
-import Navbar from './layout/Navbar'
-import AboutPage from './pages/About'
-import MobileNavbar from './layout/NavbarMobile'
-import { aboutData } from './data/about.data'
-const NAVBAR_HEIGHT = 64 // px (ajustá si tu navbar mide más)
+import Sidebar from '../layout/Sidebar' 
+import AboutPage from '../pages/About'
+import MobileNavbar from '../layout/NavbarMobile'
+import { aboutData } from '../data/about.data' 
 
 export default function App() {
-  const [activePage, setActivePage] = useState('about')
+  const [activePage, setActivePage] = useState('portfolio')
 
   return (
     <div className="
@@ -24,7 +22,10 @@ export default function App() {
       {/* Sidebar */}
       <Sidebar />
       {/* Main content */}
-      <div className="flex-1 flex flex-col  h-auto  ml:flex-row" style={{ overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#4a4a4a transparent' }}>
+      <div 
+      className="flex-1 flex flex-col  h-auto  ml:flex-row" 
+      style={{ overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#4a4a4a transparent' }}
+      >
 
         {/* Page container */}
         <main className="flex-1 border relative" style={{ overflowY: 'auto' }}>

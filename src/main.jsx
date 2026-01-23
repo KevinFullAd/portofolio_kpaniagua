@@ -1,10 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './assets/styles/index.css'
-import App from './App.jsx'
+import './styles/index.css'
+import { ThemeProvider } from "./app/providers/ThemeProvider.jsx";
+import { AccentProvider } from './app/providers/AccentProvider.jsx';
+import App from './app/App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <AccentProvider>
+        <App />
+      </AccentProvider>
+    </ThemeProvider>
   </StrictMode>,
 )
