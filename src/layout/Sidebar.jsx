@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
     ChevronDown,
     AtSign,
@@ -14,9 +14,23 @@ import FlashIcon from '../components/ui/FlashIcon'
 import avatar from '../assets/images/my-avatar.png'
 export default function Sidebar() {
     const [open, setOpen] = useState(false)
+    
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 1024) { // Set your desired width limit
+                setOpen(true);
+            } else {
+                setOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []); 
 
     return (
-        <aside className="w-full lg:w-85 p-4 lg:p-6">
+        <aside className="w-full lg:w-85 ">
             <div className="relative bg-linear-to-br from-zinc-900 to-zinc-950 border border-white/10 rounded-2xl shadow-xl overflow-hidden">
 
                 {/* Header */}
@@ -46,7 +60,7 @@ export default function Sidebar() {
                         onClick={() => setOpen(!open)}
                         aria-label="Toggle contacts"
                         className="
-                            ml-auto absolute -right-1 top-0
+                            ml-auto absolute -right-1 top-0 lg:hidden
                             p-2 rounded-bl-2xl w-10 h-10
                             overflow-hidden
                             bg-linear-to-br from-yellow-300/30 to-60% to-transparent
