@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import Sidebar from '../layout/Sidebar' 
+import Sidebar from '../layout/Sidebar'
 import AboutPage from '../pages/About'
+import { PortfolioPage } from '../pages/Portfolio'
 import MobileNavbar from '../layout/NavbarMobile'
-import { aboutData } from '../data/about.data' 
+import { aboutData } from '../data/about.data'
 
 export default function App() {
   const [activePage, setActivePage] = useState('portfolio')
@@ -13,8 +14,8 @@ export default function App() {
     min-h-screen 
     bg-(--bg-main) text-white 
     flex flex-col 
-    lg:flex-row 
-    p-4 pb-24  lg:p-6
+    lg:flex-row border-3 border-red-500
+    p-4 pb-24  lg:p-10
     gap-4
     "
     >
@@ -22,13 +23,17 @@ export default function App() {
       {/* Sidebar */}
       <Sidebar />
       {/* Main content */}
-      <div 
-      className="flex-1 flex flex-col  h-auto  ml:flex-row" 
-      style={{ overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#4a4a4a transparent' }}
+      <div
+        className="flex flex-col  h-full flex-1  ml:flex-row " 
+        style={{ scrollbarWidth: 'thin', scrollbarColor: '#4a4a4a transparent' }}
       >
 
-        {/* Page container */}
-        <main className="flex-1 border relative" style={{ overflowY: 'auto' }}>
+        <main className="
+                h-full bg-[color:var(--bg-sec)]
+                border border-[color:var(--border)]
+                shadow-[var(--shadow)] 
+                z-10 flex-1 py-4 px-4 rounded-2xl 
+                ">
 
           {activePage === 'about' && (
             <AboutPage data={aboutData} />
@@ -41,9 +46,7 @@ export default function App() {
           )}
 
           {activePage === 'portfolio' && (
-            <div className=" text-slate-400">
-              Portfolio page (pending)
-            </div>
+            <PortfolioPage />
           )}
 
           {activePage === 'blog' && (
@@ -58,7 +61,8 @@ export default function App() {
             </div>
           )}
         </main>
-           <span className="
+        <span className="
+              lg:hidden
               pointer-events-none
               fixed
               inset-x-0
@@ -69,11 +73,11 @@ export default function App() {
               from-(--bg-main)/60
               to-transparent
             " />
-            <MobileNavbar
-              className=""
-              activePage={activePage}
-              setActivePage={setActivePage}
-            />
+        <MobileNavbar
+          className=""
+          activePage={activePage}
+          setActivePage={setActivePage}
+        />
       </div>
     </div>
   )

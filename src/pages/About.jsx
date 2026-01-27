@@ -1,6 +1,6 @@
 export default function AboutPage({ data }) {
     return (
-        <section className="max-w-5xl mx-auto px-6 space-y-12">
+        <section className="max-w-5xl mx-auto  space-y-12">
 
             {/* Header */}
             <header className="space-y-4">

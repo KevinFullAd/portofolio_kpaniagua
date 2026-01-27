@@ -67,8 +67,7 @@ body {
   color: var(--text);
 }
 body::-webkit-scrollbar { 
-  width: 1px; 
-  color: red;
+  width: 1px;  
 }
 body::-webkit-scrollbar-thumb{
   background-color: rgb(var(--accent-rgb));

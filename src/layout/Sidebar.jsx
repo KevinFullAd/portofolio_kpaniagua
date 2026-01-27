@@ -32,13 +32,13 @@ export default function Sidebar() {
     );
 
     return (
-        <aside className="w-full lg:w-[25%]">
+        <aside className="w-full lg:w-[25%] ">
             <div
                 className="
                 relative rounded-2xl
                 bg-[color:var(--bg-sec)]
                 border border-[color:var(--border)]
-                shadow-[var(--shadow)]
+                shadow-[var(--shadow)] 
                 "
             >
                 <SidebarHeader
@@ -50,7 +50,7 @@ export default function Sidebar() {
                 />
 
                 {/* Divider */}
-                <div className="h-px bg-[color:var(--border)] mx-5" />
+                <div className={`h-px bg-[color:var(--border)] mx-5 ${open ? 'block' : 'hidden'}`} />
 
                 <SidebarBody
                     open={open}
