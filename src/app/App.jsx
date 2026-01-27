@@ -66,7 +66,7 @@ export default function App() {
               h-24
               z-40
               bg-gradient-to-t
-              from-black/60
+              from-(--bg-main)/60
               to-transparent
             " />
             <MobileNavbar
