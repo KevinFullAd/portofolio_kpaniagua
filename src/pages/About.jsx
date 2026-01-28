@@ -1,6 +1,8 @@
+import { PageContainer } from "../components/ui/PageContainer"
+
 export default function AboutPage({ data }) {
     return (
-        <section className="max-w-5xl mx-auto  space-y-12">
+        <PageContainer className="max-w-5xl mx-auto  space-y-12">
 
             {/* Header */}
             <header className="space-y-4">
@@ -50,6 +52,6 @@ export default function AboutPage({ data }) {
                 </ul>
             </section>
 
-        </section>
+        </PageContainer>
     )
 }

@@ -130,7 +130,7 @@ export default function SidebarBody({
                         {openAccent && (
                             <div
                                 className="
-                                absolute -left-2 z-50
+                                absolute -left-2 z-100
                                 top-full mt-2
                                 lg:top-auto lg:mt-0 lg:bottom-full lg:mb-2
                                 w-14 rounded-[28px]

@@ -2,7 +2,7 @@ import { PageContainer } from "../components/ui/PageContainer"
 export const PortfolioPage = ({ className = "" }) => {
     return (
         <PageContainer className={`flex flex-col gap-4 ${className}`}>
-            <header className="space-y-4 border border-red-500 ">
+            <header className="space-y-4">
                 <h2 className="text-3xl font-semibold text-(--text)">
                     Mis trabajos
                 </h2>

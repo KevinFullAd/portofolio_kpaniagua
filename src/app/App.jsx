@@ -4,6 +4,7 @@ import Sidebar from '../layout/Sidebar'
 import AboutPage from '../pages/About'
 import { PortfolioPage } from '../pages/Portfolio'
 import MobileNavbar from '../layout/NavbarMobile'
+import Navbar from '../layout/Navbar'
 import { aboutData } from '../data/about.data'
 
 export default function App() {
@@ -24,17 +25,18 @@ export default function App() {
       <Sidebar />
       {/* Main content */}
       <div
-        className="flex flex-col  h-full flex-1  ml:flex-row " 
+        className="flex flex-col  flex-1  ml:flex-row " 
         style={{ scrollbarWidth: 'thin', scrollbarColor: '#4a4a4a transparent' }}
       >
 
         <main className="
-                h-full bg-[color:var(--bg-sec)]
-                border border-[color:var(--border)]
-                shadow-[var(--shadow)] 
-                z-10 flex-1 py-4 px-4 rounded-2xl 
+                bg-(--bg-sec) overflow-hidden
+                border border-(--border)
+                shadow-(--shadow) 
+                z-10 flex-1  rounded-2xl 
+                relative
                 ">
-
+          <Navbar />
           {activePage === 'about' && (
             <AboutPage data={aboutData} />
           )}
@@ -73,11 +75,12 @@ export default function App() {
               from-(--bg-main)/60
               to-transparent
             " />
+
         <MobileNavbar
-          className=""
           activePage={activePage}
           setActivePage={setActivePage}
         />
+        
       </div>
     </div>
   )
