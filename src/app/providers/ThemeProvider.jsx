@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 const ThemeContext = createContext(null);
 const THEME_KEY = "theme"; // solo tema
 
-export function ThemeProvider({ children }) {
+export default function ThemeProvider({ children }) {
     const [theme, setTheme] = useState(
         () => localStorage.getItem(THEME_KEY) || "dark"
     ); // "dark" | "light"

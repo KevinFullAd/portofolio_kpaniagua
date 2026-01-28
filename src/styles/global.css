@@ -15,3 +15,28 @@
 .icon-flash {
   animation: icon-flash var(--icon-duration, 0.9s) ease-out forwards;
 }
+
+/* -------------------------
+   Abstract background animations
+-------------------------- */
+
+@keyframes ab-float {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(0, -10px, 0) scale(1.02); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes ab-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(10px, -6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .ab-animate,
+  .ab-animate * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

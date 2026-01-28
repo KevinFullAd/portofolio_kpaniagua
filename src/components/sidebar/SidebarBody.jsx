@@ -32,17 +32,12 @@ export default function SidebarBody({
 
                     <div className="min-w-0">
                         <p className="text-(--text-muted) text-xs">EMAIL</p>
-                        <a
-                            href="mailto:kevin.paniagua@gmail.com"
-                            className="transition-colors"
-                            style={{ color: "var(--text)" }}
-                            onMouseEnter={(e) =>
-                                (e.currentTarget.style.color = "var(--accent-solid)")
-                            }
-                            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text)")}
-                        >
+                        <a href="mailto:kevin.paniagua@gmail.com" className="xg-link">
                             kevin.paniagua@gmail.com
                         </a>
+
+
+
                     </div>
                 </div>
 

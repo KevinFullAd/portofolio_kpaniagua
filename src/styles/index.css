@@ -1,9 +1,16 @@
 /* index.css */
 @import "tailwindcss";
+@import "./global.css";
 
 /* -------------------------
    NEUTRALES (tema)
 -------------------------- */
+:root {
+  /* base: usa acento */
+  --link-color: var(--accent-solid);
+  --link-hover: rgb(var(--accent-rgb) / 0.8);
+}
+
 :root {
   /* default theme: dark */
   --bg-main: #0b0f14;
@@ -13,12 +20,10 @@
   --text: #e5e7eb;
   --text-muted: #94a3b8;
 
-  --border: rgba(255, 255, 255, 0.10);
+  --border: #ffffff1a;
   --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
 
-  /* Acento default (lo pisa data-contrast / data-accent) */
   --accent-rgb: 56 189 248;
-  /* cyan */
 }
 
 :root[data-theme="light"] {
@@ -34,17 +39,31 @@
 }
 
 /* -------------------------
-   ACENTO (contraste / color de página) 
+  ACENTO (contraste / color de página) 
 -------------------------- */
- 
-:root[data-accent="cyan"]   { --accent-rgb: 56 189 248; }
-:root[data-accent="violet"] { --accent-rgb: 167 139 250; }
-:root[data-accent="red"]    { --accent-rgb: 248 113 113; }
-:root[data-accent="green"]   { --accent-rgb: 34 197 94; }
-:root[data-accent="yellow"] { --accent-rgb: 250 204 21; }
+
+:root[data-accent="cyan"] {
+  --accent-rgb: 56 189 248;
+}
+
+:root[data-accent="violet"] {
+  --accent-rgb: 167 139 250;
+}
+
+:root[data-accent="red"] {
+  --accent-rgb: 248 113 113;
+}
+
+:root[data-accent="green"] {
+  --accent-rgb: 34 197 94;
+}
+
+:root[data-accent="yellow"] {
+  --accent-rgb: 250 204 21;
+}
 
 /* -------------------------
-   DERIVADOS DEL ACENTO (solo alpha)
+ DERIVADOS DEL ACENTO (solo alpha)
 -------------------------- */
 :root {
   --accent-solid: rgb(var(--accent-rgb) / 1);
@@ -52,10 +71,8 @@
   --accent-med: rgb(var(--accent-rgb) / 0.22);
   --accent-soft: rgb(var(--accent-rgb) / 0.12);
 
-  /* glow/sombra acentuada */
   --accent-glow: 0 0 22px rgb(var(--accent-rgb) / 0.35);
 
-  /* icon flash */
   --icon-base: rgb(var(--accent-rgb) / 0.70);
   --icon-flash: rgb(var(--accent-rgb) / 1);
 }
@@ -66,9 +83,22 @@ body {
   background: var(--bg-main);
   color: var(--text);
 }
-body::-webkit-scrollbar { 
-  width: 1px;  
+
+body::-webkit-scrollbar {
+  width: 1px;
 }
-body::-webkit-scrollbar-thumb{
+
+body::-webkit-scrollbar-thumb {
   background-color: rgb(var(--accent-rgb));
 }
+
+/* Link del sistema: siempre toma acento y cambia con theme */
+.xg-link {
+  color: var(--text) !important;
+  transition: color 200ms ease;
+}
+
+.xg-link:hover {
+  color: rgb(var(--accent-rgb) / 0.85) !important;
+}
+ 

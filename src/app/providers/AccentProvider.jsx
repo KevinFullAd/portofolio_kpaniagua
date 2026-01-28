@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 const AccentContext = createContext(null);
 const ACCENT_KEY = "accent"; // cyan | yellow | violet | etc
 
-export function AccentProvider({ children }) {
+export default function AccentProvider({ children }) {
     const [accent, setAccent] = useState(
         () => localStorage.getItem(ACCENT_KEY) || "cyan"
     );
