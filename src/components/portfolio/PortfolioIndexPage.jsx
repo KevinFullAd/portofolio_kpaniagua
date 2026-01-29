@@ -1,14 +1,19 @@
-// src/pages/Portfolio/PortfolioIndexPage.jsx
+// src/components/portfolio/PortfolioIndexPage.jsx
+import React from "react";
 import { portfolioData } from "../../data/portfolio.data";
-import { WorkCard } from "../../components/portfolio/WorkCard";
+import { WorkCard } from "./WorkCard";
+
+import { H2 } from "../ui/primitives/typography/H2";
+import { Muted } from "../ui/primitives/typography/Muted";
 
 export function PortfolioIndexPage() {
     const { page, works } = portfolioData;
 
     return (
         <>
-            <header className="space-y-4">
-                <h2 className="text-3xl font-semibold text-(--text)">{page.title}</h2>
+            <header className="space-y-2">
+                <H2>{page?.title || "Mis trabajos"}</H2>
+                {page?.subtitle ? <Muted>{page.subtitle}</Muted> : null}
             </header>
 
             <section className="flex flex-col gap-4">

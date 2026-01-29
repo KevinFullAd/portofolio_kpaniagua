@@ -35,9 +35,9 @@ export default function AppShell() {
         <div
             className="
                 min-h-screen
-                bg-(--bg-main) text-white
+                bg-(--bg-main) text-(--text)
                 flex flex-col lg:flex-row
-                p-4 pb-24 lg:p-10
+                p-4 pb-24 lg:p-10 2xl:px-45
                 gap-4
             "
         >

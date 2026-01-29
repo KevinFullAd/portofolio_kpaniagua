@@ -7,7 +7,7 @@ export const PortfolioPage = ({ className = "" }) => {
     const { page, works } = portfolioData;
 
     return (
-        <PageContainer className={`flex flex-col gap-4 ${className}`}>
+        <PageContainer className={`flex flex-col gap-4  ${className}`}>
             <header className="space-y-4">
                 <h2 className="text-3xl font-semibold text-(--text)">{page.title}</h2>
             </header>

@@ -14,7 +14,7 @@ export default function Navbar({ activePage, setActivePage, className = "" }) {
     return (
         <nav
             className={`
-            min-w-100 max-w-[40%]
+            min-w-100 max-w-[40%] z-20
             absolute right-0 top-0
             hidden lg:block
             ${className}

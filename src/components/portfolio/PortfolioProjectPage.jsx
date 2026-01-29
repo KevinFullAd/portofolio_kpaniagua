@@ -1,7 +1,8 @@
-// src/pages/Portfolio/PortfolioProjectPage.jsx
+// src/components/portfolio/PortfolioProjectPage.jsx
+import React from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { portfolioData } from "../../data/portfolio.data";
-import { ProjectDetail } from "../../components/portfolio/ProjectDetail";
+import { ProjectDetail } from "./ProjectDetail";
 
 export function PortfolioProjectPage() {
     const { id } = useParams();
