@@ -1,0 +1,42 @@
+/* global.css (fix + hacerlo dependiente del acento) */
+
+@keyframes shadow-pulse {
+  0%   { box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.45); }
+  50%  { box-shadow: 0 0 0 6px rgb(var(--accent-rgb) / 0.15); }
+  100% { box-shadow: 0 0 0 0 rgb(var(--accent-rgb) / 0.45); }
+}
+
+@keyframes icon-flash {
+  0%   { color: var(--icon-base); text-shadow: none; }
+  30%  { color: var(--icon-flash); text-shadow: 0 0 8px var(--icon-flash); }
+  100% { color: var(--icon-base); text-shadow: none; }
+}
+
+.icon-flash {
+  animation: icon-flash var(--icon-duration, 0.9s) ease-out forwards;
+}
+
+/* -------------------------
+   Abstract background animations
+-------------------------- */
+
+@keyframes ab-float {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(0, -10px, 0) scale(1.02); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes ab-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(10px, -6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .ab-animate,
+  .ab-animate * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
