@@ -1,11 +1,7 @@
 export function AccentCard({ title, children }) {
     return (
         <div
-            className="rounded-2xl border border-(--border) p-5 md:p-6"
-            style={{
-                background: "rgb(var(--accent-rgb) / 0.08)",
-                boxShadow: "var(--shadow)",
-            }}
+            className="rounded-2xl border border-(--border) bg-(--accent-solid)/10 shadow-md shadow-(--shadow) p-5 md:p-6"
         >
             <div
                 className="text-xs uppercase tracking-[0.18em]"

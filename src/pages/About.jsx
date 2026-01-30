@@ -16,6 +16,7 @@ import { ServiceCard } from "../components/ui/cards/ServiceCard.jsx";
 import { FlowMap } from "../components/about/FlowMap.jsx";
 import { ContactPill } from "../components/ui/ContactPill.jsx";
 import { Eyebrow } from "../components/ui/primitives/typography/EyeBrow.jsx";
+
 export default function About({ data }) {
     const intro = data?.intro;
     const map = data?.map;

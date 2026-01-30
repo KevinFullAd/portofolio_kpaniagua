@@ -23,12 +23,12 @@ export default function AppShell() {
         if (p.startsWith("/portfolio")) return "portfolio";
         if (p.startsWith("/blog")) return "blog";
         if (p.startsWith("/contact")) return "contact";
-        return "portfolio";
+        return "about";
     })();
 
     const setActivePage = (id) => {
         const found = items.find((x) => x.id === id);
-        navigate(found?.path || "/portfolio");
+        navigate(found?.path || "/about");
     };
 
     return (
@@ -64,14 +64,14 @@ export default function AppShell() {
 
                 <span
                     className="
-            lg:hidden
-            pointer-events-none
-            fixed inset-x-0 bottom-0
-            h-24 z-40
-            bg-gradient-to-t
-            from-(--bg-main)/60
-            to-transparent
-            "
+                    lg:hidden
+                    pointer-events-none
+                    fixed inset-x-0 bottom-0
+                    h-24 z-40
+                    bg-gradient-to-t
+                    from-(--bg-main)/60
+                    to-transparent
+                    "
                 />
 
                 <MobileNavbar activePage={activePage} setActivePage={setActivePage} />

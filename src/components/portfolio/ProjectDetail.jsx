@@ -168,8 +168,7 @@ export function ProjectDetail({ work }) {
             </div>
 
             <Divider className="opacity-70" />
-
-            {/* Footer nav dentro de la rama portfolio */}
+ 
             <footer className="pt-1 relative flex justify-end">
                 <Link
                     to={`/portfolio`}
