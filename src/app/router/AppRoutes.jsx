@@ -5,12 +5,14 @@ import AppShell from "../../layout/AppShell.jsx";
 
 import About from "../../pages/About.jsx"; 
 import Resume from "../../pages/Resume.jsx"; 
+import Contact from "../../pages/Contact.jsx";
 
 import { PortfolioLayout } from "../../components/portfolio/PortfolioLayout.jsx";
 import { PortfolioProjectPage } from "../../components/portfolio/PortfolioProjectPage.jsx";
 
 import Portfolio from "../../pages/Portfolio.jsx";
 import { aboutData } from "../../data/about.data.js";
+import Blog from "../../pages/Blog.jsx";
 
 export function AppRoutes() {
     return (
@@ -27,7 +29,10 @@ export function AppRoutes() {
                     <Route path=":id" element={<PortfolioProjectPage />} />
                 </Route>
 
-                <Route path="*" element={<Navigate to="/portfolio" replace />} />
+                <Route path="/blog"  element={<Blog/>}/>
+                <Route path="/contact"  element={<Contact />} />
+
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
         </Routes>
     );

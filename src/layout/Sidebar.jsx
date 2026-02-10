@@ -32,13 +32,13 @@ export default function Sidebar() {
     );
 
     return (
-        <aside className="w-full lg:w-[25%] lg:min-w-80 ">
+        <aside className="w-full  lg:max-w-90 lg:min-w-80 ">
             <div
                 className="
                 relative rounded-2xl
-                bg-[color:var(--bg-sec)]
-                border border-[color:var(--border)]
-                shadow-[var(--shadow)] 
+                bg-(--bg-sec)
+                border border-(--border)
+                shadow-(--shadow) 
                 "
             >
                 <SidebarHeader

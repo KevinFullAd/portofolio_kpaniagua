@@ -12,7 +12,7 @@ export function ContactPill({ href, label, className = "" }) {
                 ${className}
             `}
         >   
-            <span className="text-sm">{label}</span>
+            <span>{label}</span>
         </a>
     );
 }

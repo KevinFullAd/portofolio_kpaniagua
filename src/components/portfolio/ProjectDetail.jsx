@@ -10,6 +10,7 @@ import { Muted } from "../ui/primitives/typography/Muted";
 import { Divider } from "../ui/primitives/Divider";
 import { SoftCard } from "../ui/cards/SoftCard";
 import { ContactPill } from "../ui/ContactPill";
+import { PageContainer } from "../ui/primitives/PageContainer";
 
 function Section({ title, paragraphs = [], bullets = [] }) {
     return (
@@ -41,12 +42,11 @@ export function ProjectDetail({ work }) {
     const d = work.detail;
 
     return (
-        <article className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
             {/* HERO */}
             <header
                 className="
-                relative overflow-hidden rounded-2xl
-                border border-(--border)
+                overflow-hidden rounded-2xl sticky 
                 p-5 md:p-6
                 "
                 style={{ boxShadow: "var(--shadow)" }}
@@ -56,14 +56,6 @@ export function ProjectDetail({ work }) {
                     animated={false}
                     base="transparent"
                     className="absolute inset-0 -z-1"
-                />
-
-                <div
-                    className="
-                        absolute inset-0 rounded-2xl
-                        bg-linear-to-t opacity-10 -z-10
-                        from-black/85 via-black/45 to-black/10
-                    "
                 />
 
                 <div className="relative z-10 flex flex-col gap-4 md:items-start">
@@ -113,10 +105,8 @@ export function ProjectDetail({ work }) {
                 </div>
             </header>
 
-            <Divider className="opacity-70" />
-
             {/* CONTENIDO */}
-            <div className="grid gap-6  lg:px-10 md:gap-8">
+            <div className="grid gap-6 p-5 lg:px-6 md:gap-8">
                 {d?.sections?.map((s) => (
                     <Section
                         key={s.id}
@@ -168,8 +158,8 @@ export function ProjectDetail({ work }) {
             </div>
 
             <Divider className="opacity-70" />
- 
-            <footer className="pt-1 relative flex justify-end">
+
+            <footer className="p-5 relative flex justify-end">
                 <Link
                     to={`/portfolio`}
                     className="
@@ -181,13 +171,13 @@ export function ProjectDetail({ work }) {
                         "
                     style={{
                         background: "var(--accent-solid)",
-                        color: "var(--bg-main)",
+                        color: "var(--text)",
                         boxShadow: "var(--accent-glow)",
                     }}
                 >
                     Volver
                 </Link>
             </footer>
-        </article>
+        </div>
     );
 }

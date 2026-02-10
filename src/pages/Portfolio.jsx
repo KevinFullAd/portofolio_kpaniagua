@@ -1,7 +1,4 @@
-// src/pages/Portfolio.jsx
-// Entrada editorial + jerarquía como About, sin romper tu estructura.
-// Mantiene PageContainer + WorkCard, solo suma “capa narrativa”.
-
+// src/pages/Portfolio.jsx 
 import React from "react";
 import { PageContainer } from "../components/ui/primitives/PageContainer";
 import { WorkCard } from "../components/portfolio/WorkCard";
@@ -22,7 +19,7 @@ export default function Portfolio({ className = "" }) {
     const chips = hero?.chips || ["UI/UX", "Frontend", "Producto"];
 
     return (
-        <PageContainer className={`flex flex-col gap-8 !p-0 ${className}`}> 
+        <PageContainer className={`flex flex-col gap-8  ${className}`}> 
             <header className="space-y-4">
                 <Eyebrow>{hero.eyebrow || "Portfolio"}</Eyebrow>
 

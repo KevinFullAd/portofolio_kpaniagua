@@ -4,8 +4,8 @@ import { PageContainer } from "../ui/primitives/PageContainer";
 
 export function PortfolioLayout({ className = "" }) {
     return (
-        <PageContainer className={`flex flex-col gap-4 ${className}`}>
+        <div className={`flex flex-col gap-4 ${className}`}>
             <Outlet />
-        </PageContainer>
+        </div>
     );
 }

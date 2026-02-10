@@ -1,6 +1,4 @@
-// src/pages/About.jsx
-// Consumidor 100% desde about.data.js (intro, map, shortcuts, oneLiner, story, approach, services, closing)
-
+// src/pages/About.jsx 
 import React from "react";
 import { PageContainer } from "../components/ui/primitives/PageContainer";
 import { AbstractBackground } from "../components/ui/graphics/AbstractBackground"; 
@@ -90,7 +88,7 @@ export default function About({ data }) {
             </div>
 
             {/* MAPA + ACCESOS */}
-            <div className="flex flex-col md:flex-row px-10 gap-6 md:gap-8 items-start">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                 <div className="flex-1">
                     <Eyebrow>{map?.eyebrow || "Mapa de lectura"}</Eyebrow>
                     <H3>{map?.title || "¿Qué vas a encontrar acá?"}</H3>
@@ -153,7 +151,7 @@ export default function About({ data }) {
 
             {/* STORY */}
             {story ? (
-                <section className="flex flex-col px-10 gap-6">
+                <section className="flex flex-col gap-6">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
                         <div>
                             <Eyebrow>{story.eyebrow || "Un poco más personal"}</Eyebrow>
@@ -206,7 +204,7 @@ export default function About({ data }) {
 
             {/* APPROACH */}
             {approach ? (
-                <section className="space-y-6 px-10">
+                <section className="space-y-6">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
                         <div>
                             <Eyebrow>{approach.eyebrow || "Mi forma de trabajar"}</Eyebrow>
@@ -262,7 +260,7 @@ export default function About({ data }) {
 
             {/* SERVICES */}
             {serviceItems.length ? (
-                <section className="space-y-6 px-10 ">
+                <section className="space-y-6 ">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3">
                         <div>
                             <Eyebrow>{services.eyebrow || "Lo que ofrezco"}</Eyebrow>
@@ -290,7 +288,7 @@ export default function About({ data }) {
             {closing ? (
                 <>
                     <Divider className="opacity-70" />
-                    <section className="space-y-5 px-10 ">
+                    <section className="space-y-5">
                         <div>
                             <Eyebrow>{closing.eyebrow || "Contacto"}</Eyebrow>
                             <H3>{closing.title}</H3>

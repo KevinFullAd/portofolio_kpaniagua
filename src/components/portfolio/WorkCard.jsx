@@ -76,7 +76,7 @@ export function WorkCard({
                             "
                         style={{
                             background: "var(--accent-solid)",
-                            color: "var(--bg-main)",
+                            color: "var(--text)",
                             boxShadow: "var(--accent-glow)",
                         }}
                     >
