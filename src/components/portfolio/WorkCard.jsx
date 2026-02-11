@@ -57,7 +57,7 @@ export function WorkCard({
             <div className="flex-1 flex flex-col justify-end gap-2">
                 <H3>{title}</H3>
 
-                <div className="w-[70%] max-w-[520px]">
+                <div className="w-[70%] max-w-130">
                     <Muted className="text-(--text)">{description}</Muted>
                     <Divider className="w-[80%] my-2 opacity-60" />
                 </div>
@@ -76,7 +76,7 @@ export function WorkCard({
                             "
                         style={{
                             background: "var(--accent-solid)",
-                            color: "var(--text)",
+                            color: "var(--bg-main)",
                             boxShadow: "var(--accent-glow)",
                         }}
                     >

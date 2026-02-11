@@ -50,7 +50,7 @@ export default function Sidebar() {
                 />
 
                 {/* Divider */}
-                <div className={`h-px bg-[color:var(--border)] mx-5 ${open ? 'block' : 'hidden'}`} />
+                <div className={`h-px bg-(--border) mx-5 ${open ? 'block' : 'hidden'}`} />
 
                 <SidebarBody
                     open={open}

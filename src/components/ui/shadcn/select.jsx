@@ -1,4 +1,3 @@
-// src/components/ui/shadcn/select.jsx
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { cn } from "./utils";
@@ -30,10 +29,8 @@ export function SelectContent({ className, ...props }) {
     return (
         <SelectPrimitive.Portal>
             <SelectPrimitive.Content
-                position="popper"
                 className={cn(
-                    // MUY IMPORTANTE: z alto para que no quede detrás
-                    "z-[9999] overflow-hidden rounded-2xl border border-(--border) bg-(--bg-sec) shadow-lg",
+                    "z-50 overflow-hidden rounded-2xl border border-(--border) bg-(--bg-sec) shadow-lg",
                     className
                 )}
                 {...props}

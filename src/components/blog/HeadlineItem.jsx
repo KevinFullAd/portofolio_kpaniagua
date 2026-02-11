@@ -10,7 +10,7 @@ export default function HeadlineItem({ item, onOpen }) {
             <div className="group py-2">
                 <div className="flex items-start gap-2">
                     <span
-                        className="material-icons-outlined text-sm mt-[2px]"
+                        className="material-icons-outlined text-sm mt-0.5"
                         aria-hidden="true"
                         style={{ color: "var(--text-muted)" }}
                     >

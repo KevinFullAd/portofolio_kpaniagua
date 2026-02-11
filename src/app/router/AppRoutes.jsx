@@ -5,6 +5,7 @@ import AppShell from "../../layout/AppShell.jsx";
 
 import About from "../../pages/About.jsx"; 
 import Resume from "../../pages/Resume.jsx"; 
+import Contact from "../../pages/Contact.jsx";
 
 import { PortfolioLayout } from "../../components/portfolio/PortfolioLayout.jsx";
 import { PortfolioProjectPage } from "../../components/portfolio/PortfolioProjectPage.jsx";

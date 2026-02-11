@@ -1,4 +1,4 @@
-// src/pages/Portfolio.jsx 
+// src/pages/Portfolio.jsx
 import React from "react";
 import { PageContainer } from "../components/ui/primitives/PageContainer";
 import { WorkCard } from "../components/portfolio/WorkCard";
@@ -12,19 +12,22 @@ import { Chip } from "../components/ui/primitives/Chip";
 import { Divider } from "../components/ui/primitives/Divider";
 import { SoftCard } from "../components/ui/cards/SoftCard";
 
+import { Reveal } from "../components/ui/animations/Reveal";
+
 export default function Portfolio({ className = "" }) {
     const { page, works } = portfolioData;
- 
+
     const hero = page?.hero || {};
     const chips = hero?.chips || ["UI/UX", "Frontend", "Producto"];
 
     return (
-        <PageContainer className={`flex flex-col gap-8  ${className}`}> 
-            <header className="space-y-4">
+        <PageContainer className={`flex flex-col gap-8 ${className}`}>
+            <Reveal as="header" className="space-y-4" amount={0.35} once>
                 <Eyebrow>{hero.eyebrow || "Portfolio"}</Eyebrow>
 
                 <div className="space-y-2">
                     <H2>{page?.title || "Mis trabajos"}</H2>
+
                     {hero?.lead ? (
                         <Lead>{hero.lead}</Lead>
                     ) : (
@@ -44,67 +47,67 @@ export default function Portfolio({ className = "" }) {
                     )}
                 </div>
 
-                {/* chips conceptuales (orientan lectura) */}
                 <div className="flex flex-wrap gap-2 pt-1">
                     {chips.map((c) => (
                         <Chip key={c}>{c}</Chip>
                     ))}
                 </div>
-            </header>
+            </Reveal>
 
-            {/* “mini guía” para elevar la entrada sin ruido */}
-            <SoftCard className="p-4 md:p-5">
-                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
-                    <div className="flex-1">
-                        <div className="text-(--text) font-semibold">
-                            Cómo leer esta sección
+            <Reveal delay={0.04}>
+                <SoftCard className="p-4 md:p-5">
+                    <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
+                        <div className="flex-1">
+                            <div className="text-(--text) font-semibold">Cómo leer esta sección</div>
+                            <Muted className="mt-1">
+                                Entrá a un proyecto para ver objetivo, decisiones y alcance. No hay
+                                pantallas de carga: navegación directa dentro de la rama portfolio.
+                            </Muted>
                         </div>
-                        <Muted className="mt-1">
-                            Entrá a un proyecto para ver objetivo, decisiones y alcance. No hay
-                            pantallas de carga: navegación directa dentro de la rama portfolio.
-                        </Muted>
+
+                        <div className="flex flex-wrap gap-2">
+                            <span
+                                className="rounded-full px-4 py-2 border border-(--border) text-sm"
+                                style={{ background: "rgb(255 255 255 / 0.02)" }}
+                            >
+                                Objetivo
+                            </span>
+                            <span
+                                className="rounded-full px-4 py-2 border border-(--border) text-sm"
+                                style={{ background: "rgb(255 255 255 / 0.02)" }}
+                            >
+                                Decisiones
+                            </span>
+                            <span
+                                className="rounded-full px-4 py-2 border border-(--border) text-sm"
+                                style={{ background: "rgb(255 255 255 / 0.02)" }}
+                            >
+                                Resultado
+                            </span>
+                        </div>
                     </div>
+                </SoftCard>
+            </Reveal>
 
-                    <div className="flex flex-wrap gap-2">
-                        <span
-                            className="rounded-full px-4 py-2 border border-(--border) text-sm"
-                            style={{ background: "rgb(255 255 255 / 0.02)" }}
-                        >
-                            Objetivo
-                        </span>
-                        <span
-                            className="rounded-full px-4 py-2 border border-(--border) text-sm"
-                            style={{ background: "rgb(255 255 255 / 0.02)" }}
-                        >
-                            Decisiones
-                        </span>
-                        <span
-                            className="rounded-full px-4 py-2 border border-(--border) text-sm"
-                            style={{ background: "rgb(255 255 255 / 0.02)" }}
-                        >
-                            Resultado
-                        </span>
-                    </div>
-                </div>
-            </SoftCard>
+            <Reveal y={6} duration={0.35} delay={0.02}>
+                <Divider className="opacity-70" />
+            </Reveal>
 
-            <Divider className="opacity-70" />
-
-            {/* Listado */}
             <section className="flex flex-col gap-4">
-                {works.map((w) => (
-                    <WorkCard
-                        key={w.id}
-                        id={w.id}
-                        tag={w.tag}
-                        title={w.title}
-                        description={w.description}
-                        stack={w.stack}
-                        cta={w.cta}
-                        href={w.href}
-                        variant={w.variant}
-                        animated={w.animated}
-                    />
+                {works.map((w, i) => (
+                    <Reveal key={w.id} delay={0.04 * i} amount={0.2} once>
+                        <WorkCard
+                            id={w.id}
+                            tag={w.tag}
+                            title={w.title}
+                            description={w.description}
+                            stack={w.stack}
+                            cta={w.cta}
+                            href={w.href}
+                            variant={w.variant}
+                            animated={w.animated}
+                        />
+                    </Reveal>
                 ))}
             </section>
         </PageContainer>

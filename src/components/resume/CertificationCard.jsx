@@ -3,7 +3,7 @@ import { ThemedLink } from "../ui/primitives/ThemedLink";
 
 export function CertificationCard({ title, org, year, description, href }) {
     return (
-        <SoftCard className="relative !p-4 flex flex-col justify-between z-1">
+        <SoftCard className="relative p-4 h-full flex flex-col justify-between z-1">
             {/* acento institucional */}
             <span
                 className="absolute left-0 top-0 h-full w-3 rounded-l-xl -z-1"

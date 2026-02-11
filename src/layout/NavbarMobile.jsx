@@ -21,7 +21,7 @@ export default function MobileNavbar({ activePage, setActivePage, className = ""
                         absolute bottom-0 left-4 right-4
                         h-16 rounded-tl-md rounded-tr-md
                         bg-(--bg-main)
-                        border border-[color:var(--border)]
+                        border border-(--border)
                         shadow-xl z-10 transition-all duration-300
                     "
                     style={{
@@ -52,7 +52,7 @@ export default function MobileNavbar({ activePage, setActivePage, className = ""
                                     <span
                                         className={`
                                         absolute w-20 h-10 rounded-full
-                                        bg-[color:var(--accent-solid)]
+                                        bg-(--accent-solid)
                                         blur-xl transition-all duration-500 ease-out
                                         ${active ? "opacity-80 scale-100 -top-2" : "opacity-0 scale-75 top-0"}
                                         `}
@@ -81,8 +81,8 @@ export default function MobileNavbar({ activePage, setActivePage, className = ""
                                             className={`
                                             absolute left-1/2 -translate-x-1/2
                                             w-14 h-14 rounded-full
-                                            bg-[color:var(--accent-solid)]
-                                            shadow-[var(--accent-glow)]
+                                            bg-(--accent-solid)
+                                            shadow-(--accent-glow)
                                             transition-all duration-300 ease-out
                                             ${active ? "-top-11 opacity-100 scale-100" : "top-0 opacity-0 scale-75"}
                                         `}

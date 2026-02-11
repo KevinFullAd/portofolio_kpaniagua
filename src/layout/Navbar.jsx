@@ -59,7 +59,7 @@ export default function Navbar({ activePage, setActivePage, className = "" }) {
 
 
                 {/* BLURRED ACTIVE BACKGROUND (tipo mobile) */}
-                <div className="pointer-events-none absolute inset-0 z-[1]">
+                <div className="pointer-events-none absolute inset-0 z-1">
                     <div
                         className="absolute top-1/2 -translate-y-1/2 h-10 w-24 rounded-full blur-2xl transition-all duration-500 ease-out"
                         style={{
@@ -90,8 +90,8 @@ export default function Navbar({ activePage, setActivePage, className = "" }) {
                                         className={`
                                         pointer-events-none absolute inset-y-0 
                                         
-                                        -left-0 right-0
-                                        -skew-x-[18deg]
+                                        left-0 right-0
+                                        skew-x-18deg
                                         opacity-0 group-hover:opacity-100
                                         transition-opacity duration-200
                                         `}
@@ -130,7 +130,7 @@ export default function Navbar({ activePage, setActivePage, className = "" }) {
                                     <span
                                         className={`
                                         pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-1
-                                        h-[2px] w-8 rounded-full
+                                        h-0.5 w-8 rounded-full
                                         transition-all duration-300
                                         ${active ? "opacity-100" : "opacity-0 group-hover:opacity-60"}
                                         `}
