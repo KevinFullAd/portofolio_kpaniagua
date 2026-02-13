@@ -75,15 +75,17 @@ export default function FilterBar({
 
     return (
         <SoftCard className="p-4 md:p-5">
-            {/* Top row: Search + Filter button (mobile) + inline filters (xl+) */}
-            <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                    <div className="flex-1">
+            {/* Root */}
+            <div className="flex flex-col w-full gap-3 min-w-0">
+                {/* Row */}
+                <div className="flex items-center flex-wrap gap-3 w-full min-w-0">
+                    {/* Search */}
+                    <div className="flex-1 min-w-0">
                         <Input
                             value={q}
                             onChange={(e) => setQ(e.target.value)}
                             placeholder="Buscar…"
-                            className="h-11"
+                            className="h-11 w-full min-w-0"
                         />
                     </div>
 
@@ -107,15 +109,13 @@ export default function FilterBar({
                         <span className="inline-flex items-center gap-2">
                             <span className="material-icons-outlined text-[18px]">tune</span>
                             Filtros
-                            <span className="text-(--text-muted)">
-                                {open ? "▴" : "▾"}
-                            </span>
+                            <span className="text-(--text-muted)">{open ? "▴" : "▾"}</span>
                         </span>
                     </button>
 
-                    {/* Desktop XL+: show filters inline */}
-                    <div className="hidden xl:flex items-center gap-3">
-                        <div className="w-[190px]">
+                    {/* Desktop XL+: show filters inline (wrap-safe) */}
+                    <div className="hidden xl:flex flex-wrap items-center gap-3 min-w-0">
+                        <div className="w-[190px] max-w-full">
                             <Select value={cat} onValueChange={setCat}>
                                 <SelectTrigger>
                                     <SelectValue placeholder="Categoría" />
@@ -130,7 +130,7 @@ export default function FilterBar({
                             </Select>
                         </div>
 
-                        <div className="w-[190px]">
+                        <div className="w-[190px] max-w-full">
                             <Select value={proj} onValueChange={setProj}>
                                 <SelectTrigger>
                                     <SelectValue placeholder="Proyecto" />
@@ -145,7 +145,7 @@ export default function FilterBar({
                             </Select>
                         </div>
 
-                        <div className="w-[160px]">
+                        <div className="w-[160px] max-w-full">
                             <Select value={typ} onValueChange={setTyp}>
                                 <SelectTrigger>
                                     <SelectValue placeholder="Tipo" />
@@ -160,7 +160,7 @@ export default function FilterBar({
                             </Select>
                         </div>
 
-                        <div className="w-[150px]">
+                        <div className="w-[150px] max-w-full">
                             <Select value={order} onValueChange={setOrder}>
                                 <SelectTrigger>
                                     <SelectValue placeholder="Orden" />
@@ -172,7 +172,7 @@ export default function FilterBar({
                             </Select>
                         </div>
 
-                        <div className="w-[190px]">
+                        <div className="w-[190px] max-w-full">
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <button
@@ -185,7 +185,9 @@ export default function FilterBar({
                       focus-visible:ring-4 focus-visible:ring-[rgb(var(--accent-rgb)/0.10)]
                     "
                                     >
-                                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : "Desde (fecha)"}
+                                        {selectedDate
+                                            ? format(selectedDate, "dd/MM/yyyy")
+                                            : "Desde (fecha)"}
                                     </button>
                                 </PopoverTrigger>
                                 <PopoverContent className="p-2">
@@ -229,9 +231,9 @@ export default function FilterBar({
                 {/* Mobile/Tablet: collapsible panel */}
                 <div
                     className={`xl:hidden transition-all ${open ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
-                        } overflow-hidden`}
+                        } overflow-hidden min-w-0`}
                 >
-                    <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                         <Select value={cat} onValueChange={setCat}>
                             <SelectTrigger>
                                 <SelectValue placeholder="Categoría" />
@@ -281,7 +283,7 @@ export default function FilterBar({
                             </SelectContent>
                         </Select>
 
-                        <div className="sm:col-span-2">
+                        <div className="sm:col-span-2 min-w-0">
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <button
@@ -294,7 +296,9 @@ export default function FilterBar({
                       focus-visible:ring-4 focus-visible:ring-[rgb(var(--accent-rgb)/0.10)]
                     "
                                     >
-                                        {selectedDate ? format(selectedDate, "dd/MM/yyyy") : "Desde (fecha)"}
+                                        {selectedDate
+                                            ? format(selectedDate, "dd/MM/yyyy")
+                                            : "Desde (fecha)"}
                                     </button>
                                 </PopoverTrigger>
                                 <PopoverContent className="p-2">
@@ -317,12 +321,12 @@ export default function FilterBar({
                             </Popover>
                         </div>
 
-                        <div className="sm:col-span-2 flex gap-3">
+                        <div className="sm:col-span-2 flex gap-3 min-w-0">
                             <button
                                 type="button"
                                 onClick={resetAll}
                                 className="
-                  h-11 flex-1 rounded-full px-4 text-sm font-semibold
+                  h-11 flex-1 min-w-0 rounded-full px-4 text-sm font-semibold
                   border border-(--border)
                   transition hover:brightness-110 active:brightness-105
                 "
@@ -338,7 +342,7 @@ export default function FilterBar({
                                 type="button"
                                 onClick={() => setOpen(false)}
                                 className="
-                  h-11 flex-1 rounded-full px-4 text-sm font-semibold
+                  h-11 flex-1 min-w-0 rounded-full px-4 text-sm font-semibold
                   border border-(--border) bg-white/5 text-(--text)
                   transition hover:brightness-110 active:brightness-105
                 "
