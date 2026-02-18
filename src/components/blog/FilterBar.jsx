@@ -1,5 +1,5 @@
 // src/components/blog/FilterBar.jsx
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { format } from "date-fns";
 
 import { SoftCard } from "../ui/cards/SoftCard";
@@ -50,7 +50,7 @@ export default function FilterBar({
     const selectedDate = fromISODate(from);
 
     const resetDefaults = useMemo(() => {
-        const firstCat = categories?.[0] ?? "Todas";
+        const firstCat = categories?.[0] ?? "";
         const firstProj = projects?.[0] ?? "Todos";
         const firstTyp = types?.[0] ?? "Todos";
         return { firstCat, firstProj, firstTyp };
@@ -73,6 +73,13 @@ export default function FilterBar({
         setFrom("");
     };
 
+    useEffect(() => {
+        if (categories?.length && !categories.includes(cat)) {
+            setCat(categories[0]);
+        }
+    }, [categories]);
+
+
     return (
         <SoftCard className="p-4 md:p-5">
             {/* Root */}
@@ -94,11 +101,11 @@ export default function FilterBar({
                         type="button"
                         onClick={() => setOpen((v) => !v)}
                         className="
-              xl:hidden
-              h-11 shrink-0 rounded-full px-4 text-sm font-semibold
-              border border-(--border)
-              transition hover:brightness-110 active:brightness-105
-            "
+                        xl:hidden
+                        h-11 shrink-0 rounded-full px-4 text-sm font-semibold
+                        border border-(--border)
+                        transition hover:brightness-110 active:brightness-105
+                        "
                         style={{
                             background: hasActive
                                 ? "rgb(var(--accent-rgb) / 0.12)"
@@ -178,12 +185,12 @@ export default function FilterBar({
                                     <button
                                         type="button"
                                         className="
-                      h-11 w-full rounded-full px-4 text-left text-sm
-                      border border-(--border) bg-white/5 text-(--text)
-                      outline-none transition
-                      focus-visible:border-[rgb(var(--accent-rgb)/0.35)]
-                      focus-visible:ring-4 focus-visible:ring-[rgb(var(--accent-rgb)/0.10)]
-                    "
+                                        h-11 w-full rounded-full px-4 text-left text-sm
+                                        border border-(--border) bg-white/5 text-(--text)
+                                        outline-none transition
+                                        focus-visible:border-[rgb(var(--accent-rgb)/0.35)]
+                                        focus-visible:ring-4 focus-visible:ring-[rgb(var(--accent-rgb)/0.10)]
+                                        "
                                     >
                                         {selectedDate
                                             ? format(selectedDate, "dd/MM/yyyy")

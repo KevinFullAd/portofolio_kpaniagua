@@ -31,8 +31,7 @@ export function ServiceCard({ title, description, icon, className = "" }) {
                         ">
                     {isMaterialIcon ? (
                         <span
-                            className={`material-icons-outlined text-[28px] transition-colors  ease-in   
-                                ${hovered ? "text-(--accent-solid)" : "text-(--text-muted)"}`} 
+                            className={`material-icons-outlined text-[28px] text-(--accent-solid)`} 
                             aria-hidden="true"
                         >
                             {icon}
@@ -49,7 +48,7 @@ export function ServiceCard({ title, description, icon, className = "" }) {
 
                 {/* Text */}
                 <div className="flex-1">
-                    <div className={`transition-colors duration-200 text-lg font-semibold leading-snug ${hovered ? "text-(--text)" : "text-(--text-muted)"}`}>
+                    <div className={`transition-colors duration-200 text-lg font-semibold leading-snug text-(--text)`}>
                         {title}
                     </div>
                     <div className="mt-1 text-(--text-muted) leading-relaxed">

@@ -25,7 +25,7 @@ export const SelectTrigger = React.forwardRef(function SelectTrigger(
     );
 });
 
-export function SelectContent({ className, ...props }) {
+export function SelectContent({ className, children, ...props }) {
     return (
         <SelectPrimitive.Portal>
             <SelectPrimitive.Content
@@ -35,7 +35,9 @@ export function SelectContent({ className, ...props }) {
                 )}
                 {...props}
             >
-                <SelectPrimitive.Viewport className="p-1" />
+                <SelectPrimitive.Viewport className="p-1">
+                    {children}
+                </SelectPrimitive.Viewport>
             </SelectPrimitive.Content>
         </SelectPrimitive.Portal>
     );

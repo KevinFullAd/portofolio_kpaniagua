@@ -2,13 +2,14 @@ export default function TextArea({
     label,
     name,
     value,
+    className,
     onChange,
     placeholder,
     rows = 6,
     required = false,
 }) {
     return (
-        <label className="block space-y-2">
+        <label className="block h-full space-y-2">
             <div className="text-sm font-semibold text-(--text)">{label}</div>
 
             <textarea

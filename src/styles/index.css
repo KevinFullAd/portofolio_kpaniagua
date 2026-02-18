@@ -19,6 +19,7 @@
 
   --text: #e5e7eb;
   --text-muted: #94a3b8;
+  --text-accent: rgb(var(--accent-rgb));
 
   --border: #ffffff1a;
   --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);

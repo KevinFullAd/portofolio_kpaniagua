@@ -134,9 +134,9 @@ export const aboutData = {
         linksTitle: "Links",
         links: [
             {
-                label: "Email",
-                href: "mailto:kevin.paniagua@gmail.com",
-                value: "kevin.paniagua@gmail.com",
+                label: "Contacto",
+                href: "/contact",
+                value: "Ir a página contacto",
             },
             // { label: "LinkedIn", href: "https://linkedin.com/in/tuusuario", value: "linkedin.com/in/tuusuario" },
             // { label: "GitHub", href: "https://github.com/tuusuario", value: "github.com/in/tuusuario" },

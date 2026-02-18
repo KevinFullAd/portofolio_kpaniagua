@@ -12,7 +12,7 @@ export default function ProjectFlowSection({ flow }) {
                 {flow.steps.map((st, idx) => (
                     <Reveal key={st.title} delay={0.05 * idx}>
                         <SoftCard
-                            className="p-4"
+                            className="p-4 h-full"
                             style={{ boxShadow: "var(--shadow)" }}
                         >
                             <div className="flex items-center gap-2">

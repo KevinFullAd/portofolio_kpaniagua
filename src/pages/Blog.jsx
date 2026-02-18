@@ -24,18 +24,15 @@ export default function Blog() {
 
     return (
         <PageContainer className="flex flex-col gap-6">
-            {loading ? (
-                <SoftCard className="p-6">Cargando noticias...</SoftCard>
-            ) : (
-                <>
-                    <BlogHeader blog={blog} />
 
-                    <div className="grid gap-6 xl:grid-cols-[2fr_1fr] items-start">
-                        <BlogFeed blog={blog} />
-                        <BlogSidebar blog={blog} />
-                    </div>
-                </>
-            )}
+            <BlogHeader blog={blog} />
+
+            <div className="grid gap-6 xl:grid-cols-[2fr_1fr] items-start">
+                <BlogFeed blog={blog} />
+                <BlogSidebar blog={blog} />
+            </div>
+
+
         </PageContainer>
     );
 }

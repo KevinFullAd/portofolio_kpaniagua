@@ -13,7 +13,7 @@ export default function ProjectHeroSection({ work }) {
     return (
         <Reveal as="header" amount={0.3} once>
             <div
-                className="overflow-hidden rounded-2xl p-5 md:p-6 relative"
+                className=" min-h-80 overflow-hidden rounded-2xl p-5 md:p-6 relative"
                 style={{ boxShadow: "var(--shadow)" }}
             >
                 <AbstractBackground

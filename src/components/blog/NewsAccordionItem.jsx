@@ -34,7 +34,7 @@ export default function NewsAccordionItem({ item, open, onToggle }) {
                             </span>
                         </div>
 
-                        <div className="text-(--text) font-semibold leading-snug">
+                        <div className={` font-semibold leading-snug" + ${open ? "text-(--text-accent)" : "text(--text)"}`}>
                             {item.title}
                         </div>
 

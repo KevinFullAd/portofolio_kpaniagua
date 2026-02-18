@@ -12,7 +12,7 @@ export default function HeadlineItem({ item, onOpen }) {
                     <span
                         className="material-icons-outlined text-sm mt-0.5"
                         aria-hidden="true"
-                        style={{ color: "var(--text-muted)" }}
+                        style={{ color: "var(--text-accent)" }}
                     >
                         fiber_manual_record
                     </span>
@@ -23,14 +23,14 @@ export default function HeadlineItem({ item, onOpen }) {
                         >
                             {item.title}
                         </div>
-                        <div className="flex flex-wrap items-center gap-2 pt-1">
-                            <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+                        <div className="flex flex-wrap text-xs text-(--text-muted) items-center gap-2 pt-1">
+                            <span>
                                 {formatISODate(item.date)}
                             </span>
-                            <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+                            <span>
                                 · {item.project}
                             </span>
-                            <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+                            <span>
                                 · {item.category}
                             </span>
                         </div>

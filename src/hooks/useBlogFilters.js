@@ -1,3 +1,4 @@
+// useBlogFilters.js (archivo completo)
 import { useMemo, useState, useEffect } from "react";
 
 export function useBlogFilters(items) {
@@ -15,6 +16,13 @@ export function useBlogFilters(items) {
         () => ["Todos", ...Array.from(new Set(items.map((i) => i.type)))],
         [items]
     );
+
+    // ✅ loading simulado (para release: empieza vacío sin “golpear” nada)
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        const t = setTimeout(() => setIsLoading(false), 600); // ajustá 300–900ms
+        return () => clearTimeout(t);
+    }, []);
 
     const [q, setQ] = useState("");
     const [cat, setCat] = useState("Todas");
@@ -47,15 +55,25 @@ export function useBlogFilters(items) {
             );
     }, [items, q, cat, proj, typ, order, from]);
 
-    const pageCount = useMemo(
-        () => Math.max(1, Math.ceil(filtered.length / pageSize)),
-        [filtered.length]
-    );
+    // ✅ estado vacío real: 0 páginas si no hay resultados
+    const pageCount = useMemo(() => {
+        return filtered.length === 0 ? 0 : Math.ceil(filtered.length / pageSize);
+    }, [filtered.length]);
 
+    // ✅ reset al cambiar filtros
     useEffect(() => {
         setPage(1);
         setOpenId(null);
     }, [q, cat, proj, typ, order, from]);
+
+    // ✅ clamp defensivo cuando cambia abruptamente la cantidad de páginas
+    useEffect(() => {
+        if (pageCount === 0) {
+            if (page !== 1) setPage(1);
+            return;
+        }
+        if (page > pageCount) setPage(pageCount);
+    }, [pageCount, page]);
 
     const paged = useMemo(() => {
         const start = (page - 1) * pageSize;
@@ -98,23 +116,35 @@ export function useBlogFilters(items) {
         setPage(1);
     };
 
+    // ✅ key única para “resetear” animaciones/estado visual al cambiar filtros
+    const resetKey = useMemo(() => {
+        return [q.trim(), cat, proj, typ, order, from].join("|");
+    }, [q, cat, proj, typ, order, from]);
+
     return {
+        isLoading,
+
         q, setQ,
         cat, setCat,
         proj, setProj,
         typ, setTyp,
         order, setOrder,
         from, setFrom,
+
         openId, setOpenId,
         page, setPage,
         pageCount,
         paged,
         headlines,
+
         categories,
         projects,
         types,
+
         activeFilterCount,
         clearFilters,
         openFromHeadline,
+
+        resetKey,
     };
 }

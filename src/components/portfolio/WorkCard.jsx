@@ -27,8 +27,7 @@ export function WorkCard({
                 flex flex-col gap-4
                 p-4
                 ${className}
-            `}
-            style={{ boxShadow: "var(--shadow)" }}
+            `} 
         >
             {/* Fondo abstracto (no realista) */}
             <AbstractBackground
@@ -37,16 +36,7 @@ export function WorkCard({
                 base="transparent"
                 className="absolute inset-0 -z-20"
             />
-
-            {/* Overlay */}
-            <div
-                className="
-                absolute inset-0 rounded-xl
-                -z-10 opacity-10
-                bg-linear-to-t
-                from-black/80 via-black/40 to-black/10
-                "
-            />
+ 
 
             {/* Tag */}
             <div className="w-fit">
