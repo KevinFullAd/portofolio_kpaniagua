@@ -2,10 +2,6 @@ import { useEffect } from "react";
 import { Muted } from "../ui/primitives/typography/Muted";
 
 export default function Paginator({ page = 1, pageCount = 0, onPage }) {
-    
-    useEffect(() => {
-        setPage(1);
-    }, [search, tag, type, sort, fromDate]);
 
     useEffect(() => {
         if (pageCount > 0 && page > pageCount) setPage(pageCount);
@@ -31,7 +27,7 @@ export default function Paginator({ page = 1, pageCount = 0, onPage }) {
                 </Muted>
             </div>
         );
-        // si preferís ocultarlo: return null;
+        // si hay que ocultarlo: return null;
     }
 
     const clamp = (n) => Math.max(1, Math.min(pageCount, n));

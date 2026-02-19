@@ -1,4 +1,4 @@
-// useBlogFilters.js (archivo completo)
+// src/hooks/useBlogFilters.js
 import { useMemo, useState, useEffect } from "react";
 
 export function useBlogFilters(items) {
@@ -17,10 +17,10 @@ export function useBlogFilters(items) {
         [items]
     );
 
-    // ✅ loading simulado (para release: empieza vacío sin “golpear” nada)
+    // loading simulado (para release: empieza vacío sin “golpear” nada)
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        const t = setTimeout(() => setIsLoading(false), 600); // ajustá 300–900ms
+        const t = setTimeout(() => setIsLoading(false), 600); 
         return () => clearTimeout(t);
     }, []);
 
@@ -55,18 +55,18 @@ export function useBlogFilters(items) {
             );
     }, [items, q, cat, proj, typ, order, from]);
 
-    // ✅ estado vacío real: 0 páginas si no hay resultados
+    // estado vacío real: 0 páginas si no hay resultados
     const pageCount = useMemo(() => {
         return filtered.length === 0 ? 0 : Math.ceil(filtered.length / pageSize);
     }, [filtered.length]);
 
-    // ✅ reset al cambiar filtros
+    // reset al cambiar filtros
     useEffect(() => {
         setPage(1);
         setOpenId(null);
     }, [q, cat, proj, typ, order, from]);
 
-    // ✅ clamp defensivo cuando cambia abruptamente la cantidad de páginas
+    // clamp defensivo cuando cambia abruptamente la cantidad de páginas
     useEffect(() => {
         if (pageCount === 0) {
             if (page !== 1) setPage(1);
@@ -116,7 +116,7 @@ export function useBlogFilters(items) {
         setPage(1);
     };
 
-    // ✅ key única para “resetear” animaciones/estado visual al cambiar filtros
+    
     const resetKey = useMemo(() => {
         return [q.trim(), cat, proj, typ, order, from].join("|");
     }, [q, cat, proj, typ, order, from]);

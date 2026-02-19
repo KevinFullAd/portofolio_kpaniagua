@@ -101,5 +101,206 @@ export const blogItems = [
         },
         links: [],
     },
-    
+    {
+        id: "b-006",
+        date: "2026-02-18",
+        category: "Mejora",
+        project: "API Boilerplate (NestJS)",
+        type: "Backend",
+        title: "Logging estructurado con Pino",
+        summary:
+            "Integré logging estructurado con contexto por request y niveles configurables.",
+        tags: ["nestjs", "logging", "observability"],
+        details: {
+            what:
+                "Configuré Pino como logger principal con interceptores para adjuntar requestId y metadata relevante.",
+            why:
+                "Necesitaba trazabilidad clara para debugging y futuras integraciones con servicios de monitoreo.",
+            next:
+                "Agregar integración con servicio externo de logs.",
+        },
+        links: [],
+    },
+    {
+        id: "b-007",
+        date: "2026-02-16",
+        category: "Arquitectura",
+        project: "Portfolio v3",
+        type: "Frontend",
+        title: "Sistema de layout reutilizable",
+        summary:
+            "Creé un layout base con slots configurables para mantener consistencia visual.",
+        tags: ["react", "layout", "design-system"],
+        details: {
+            what:
+                "Implementé un componente Layout con header, footer y contenedor dinámico.",
+            why:
+                "Evitar duplicación y facilitar cambios globales en estructura.",
+            next:
+                "Extraer tokens visuales a un archivo centralizado.",
+        },
+        links: [],
+    },
+    {
+        id: "b-008",
+        date: "2026-02-14",
+        category: "Optimización",
+        project: "Infraestructura",
+        type: "DevOps",
+        title: "Cache de dependencias en CI",
+        summary:
+            "Reducí tiempos de pipeline usando cache de node_modules en GitHub Actions.",
+        tags: ["ci", "performance", "github-actions"],
+        details: {
+            what:
+                "Configuré actions/cache para dependencias basadas en hash del lockfile.",
+            why:
+                "Los builds repetían instalación completa en cada ejecución.",
+            next:
+                "Separar jobs paralelos para lint y tests.",
+        },
+        links: [],
+    },
+    {
+        id: "b-009",
+        date: "2026-02-12",
+        category: "Experimentación",
+        project: "API Boilerplate (NestJS)",
+        type: "Backend",
+        title: "Rate limiting global configurable",
+        summary:
+            "Agregué limitador de requests configurable por entorno.",
+        tags: ["security", "nestjs", "api"],
+        details: {
+            what:
+                "Integré un guard global con límites personalizables vía variables de entorno.",
+            why:
+                "Prevenir abuso básico y proteger endpoints públicos.",
+            next:
+                "Agregar configuración por ruta específica.",
+        },
+        links: [],
+    },
+    {
+        id: "b-010",
+        date: "2026-02-09",
+        category: "Refactor",
+        project: "Portfolio v3",
+        type: "UI",
+        title: "Normalización de tipografías",
+        summary:
+            "Unifiqué escalas tipográficas usando un sistema basado en tokens.",
+        tags: ["ui", "design-system", "refactor"],
+        details: {
+            what:
+                "Definí tamaños, pesos y line-height en un archivo central reutilizable.",
+            why:
+                "Había inconsistencias entre secciones.",
+            next:
+                "Aplicar mismo sistema a espaciados y colores.",
+        },
+        links: [],
+    },
+    {
+        id: "b-011",
+        date: "2026-02-05",
+        category: "Documentación",
+        project: "API Boilerplate (NestJS)",
+        type: "Backend",
+        title: "Guía de convenciones internas",
+        summary:
+            "Documenté reglas de estructura, naming y flujo de desarrollo.",
+        tags: ["documentation", "architecture", "standards"],
+        details: {
+            what:
+                "Escribí un README extendido con ejemplos de módulos, DTOs y servicios.",
+            why:
+                "Facilitar onboarding y mantener coherencia.",
+            next:
+                "Agregar ejemplos de testing.",
+        },
+        links: [],
+    },
+    {
+        id: "b-012",
+        date: "2026-02-01",
+        category: "Testing",
+        project: "API Boilerplate (NestJS)",
+        type: "Backend",
+        title: "Setup inicial de tests e2e",
+        summary:
+            "Configuré entorno básico para pruebas end-to-end.",
+        tags: ["testing", "nestjs", "quality"],
+        details: {
+            what:
+                "Añadí Jest e2e con entorno aislado y base de datos mock.",
+            why:
+                "Asegurar estabilidad en endpoints críticos.",
+            next:
+                "Agregar tests de autenticación y casos de error.",
+        },
+        links: [],
+    },
+    {
+        id: "b-013",
+        date: "2026-01-27",
+        category: "UX",
+        project: "Portfolio v3",
+        type: "Frontend",
+        title: "Estados vacíos consistentes",
+        summary:
+            "Definí componente reutilizable para empty states.",
+        tags: ["ux", "components", "react"],
+        details: {
+            what:
+                "Creé un componente EmptyState configurable con icono y mensaje.",
+            why:
+                "Cada sección manejaba estados sin datos de forma distinta.",
+            next:
+                "Agregar variantes para error y loading.",
+        },
+        links: [],
+    },
+    {
+        id: "b-014",
+        date: "2026-01-24",
+        category: "Seguridad",
+        project: "Infraestructura",
+        type: "DevOps",
+        title: "Headers de seguridad básicos",
+        summary:
+            "Implementé configuración inicial de headers HTTP seguros.",
+        tags: ["security", "http", "best-practices"],
+        details: {
+            what:
+                "Configuré helmet con políticas estándar.",
+            why:
+                "Reducir superficie de ataque en entornos públicos.",
+            next:
+                "Evaluar CSP personalizada.",
+        },
+        links: [],
+    },
+    {
+        id: "b-015",
+        date: "2026-01-20",
+        category: "Planificación",
+        project: "Portfolio v3",
+        type: "Producto",
+        title: "Roadmap modular del proyecto",
+        summary:
+            "Definí fases claras para evolución del portfolio.",
+        tags: ["planning", "roadmap", "architecture"],
+        details: {
+            what:
+                "Organicé el roadmap en fases: base, mejoras UX, optimización y contenido.",
+            why:
+                "Evitar crecimiento desordenado.",
+            next:
+                "Priorizar features según impacto.",
+        },
+        links: [],
+    }
+
+
 ];
