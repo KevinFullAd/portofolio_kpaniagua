@@ -1,306 +1,90 @@
 export const blogItems = [
     {
-        id: "b-001",
-        date: "2026-02-10",
-        category: "Release",
-        project: "API Boilerplate (NestJS)",
+        id: "encaja-arquitectura-modular",
+        date: "2026-02-19",
+        category: "Arquitectura",
+        project: "EnCaja",
         type: "Backend",
-        title: "Publicación inicial: API Boilerplate con NestJS",
+        title: "Arquitectura modular en NestJS para un POS offline",
         summary:
-            "Subí mi boilerplate backend con estructura modular, validación centralizada y configuración tipada.",
-        tags: ["nestjs", "backend", "architecture", "open-source"],
+            "Organización del backend en módulos independientes para mantener separación clara de responsabilidades.",
+        tags: ["nestjs", "arquitectura", "modular", "backend"],
         details: {
-            what:
-                "Publiqué el repositorio base para APIs con NestJS. Incluye estructura por dominios, validación global con class-validator y manejo de variables de entorno tipadas.",
-            why:
-                "Quería un punto de partida sólido para futuros proyectos y algo reutilizable que refleje mi forma de trabajar.",
-            next:
-                "Agregar logging estructurado, manejo global de errores y tests e2e básicos.",
+            what: "El backend está dividido en módulos: catálogo, comandas y sistema (auth). Cada uno encapsula controladores, servicios y DTOs.",
+            why: "Separar responsabilidades desde el inicio evita acoplamientos innecesarios y facilita futuras extensiones.",
+            next: "Refinar validaciones y asegurar coherencia entre módulos a medida que el sistema evolucione."
         },
         links: [
-            { label: "Repositorio", href: "https://github.com/tuusuario/api-boilerplate" },
-        ],
+            {
+                label: "Repositorio EnCaja",
+                url: "https://github.com/KevinFullAd/EnCaja"
+            }
+        ]
     },
     {
-        id: "b-002",
-        date: "2026-02-08",
-        category: "Devlog",
-        project: "Portfolio v3",
-        type: "Frontend",
-        title: "Refactor completo del About y Resume",
-        summary:
-            "Separé las secciones en componentes desacoplados y agregué animaciones consistentes con Reveal.",
-        tags: ["react", "refactor", "architecture", "ui"],
-        details: {
-            what:
-                "Reorganicé About y Resume en secciones independientes para mejorar mantenibilidad y claridad.",
-            why:
-                "El archivo original empezaba a crecer demasiado y quería una estructura escalable.",
-            next:
-                "Aplicar el mismo patrón modular al Blog y Portfolio.",
-        },
-        links: [],
-    },
-    {
-        id: "b-003",
-        date: "2026-02-06",
-        category: "Nota técnica",
-        project: "Infraestructura",
-        type: "DevOps",
-        title: "CI mínima con GitHub Actions",
-        summary:
-            "Configuré workflow con lint, tests y build en cada PR para evitar merges rotos.",
-        tags: ["ci", "github-actions", "quality"],
-        details: {
-            what:
-                "Agregué un pipeline simple que corre ESLint, tests y build automáticamente.",
-            why:
-                "Evita errores básicos y mantiene el proyecto estable.",
-            next:
-                "Agregar cache de dependencias y matrix por versiones de Node.",
-        },
-        links: [],
-    },
-    {
-        id: "b-004",
-        date: "2026-02-03",
-        category: "Decisión",
-        project: "API Boilerplate (NestJS)",
-        type: "Backend",
-        title: "Estructura por dominios y límites claros",
-        summary:
-            "Definí separación estricta entre módulos para evitar dependencias cruzadas.",
-        tags: ["architecture", "modules", "clean-code"],
-        details: {
-            what:
-                "Organicé el proyecto por dominios (users, auth, etc.) con contratos claros entre módulos.",
-            why:
-                "Sin límites claros, el proyecto se vuelve inmanejable a medida que crece.",
-            next:
-                "Documentar reglas para contributors.",
-        },
-        links: [],
-    },
-    {
-        id: "b-005",
-        date: "2026-01-29",
-        category: "Bugfix",
-        project: "Portfolio v3",
-        type: "UI",
-        title: "Unificación de comportamiento en links",
-        summary:
-            "Centralicé lógica para enlaces externos y mailto en un solo componente.",
-        tags: ["react", "ux", "components"],
-        details: {
-            what:
-                "Creé una utilidad que detecta tipo de enlace (externo, mail, tel) y aplica comportamiento correcto.",
-            why:
-                "Reducir repetición y evitar inconsistencias.",
-            next:
-                "Aplicarlo en todo el sistema de navegación.",
-        },
-        links: [],
-    },
-    {
-        id: "b-006",
-        date: "2026-02-18",
-        category: "Mejora",
-        project: "API Boilerplate (NestJS)",
-        type: "Backend",
-        title: "Logging estructurado con Pino",
-        summary:
-            "Integré logging estructurado con contexto por request y niveles configurables.",
-        tags: ["nestjs", "logging", "observability"],
-        details: {
-            what:
-                "Configuré Pino como logger principal con interceptores para adjuntar requestId y metadata relevante.",
-            why:
-                "Necesitaba trazabilidad clara para debugging y futuras integraciones con servicios de monitoreo.",
-            next:
-                "Agregar integración con servicio externo de logs.",
-        },
-        links: [],
-    },
-    {
-        id: "b-007",
-        date: "2026-02-16",
+        id: "encaja-modelado-datos-pos",
+        date: "2026-02-19",
         category: "Arquitectura",
-        project: "Portfolio v3",
-        type: "Frontend",
-        title: "Sistema de layout reutilizable",
+        project: "EnCaja",
+        type: "Modelado",
+        title: "Modelado de datos para un sistema de comandas",
         summary:
-            "Creé un layout base con slots configurables para mantener consistencia visual.",
-        tags: ["react", "layout", "design-system"],
+            "Diseño de entidades como Order, OrderItem y OrderPrintLog para garantizar trazabilidad y consistencia.",
+        tags: ["database", "prisma", "modelado", "pos"],
         details: {
-            what:
-                "Implementé un componente Layout con header, footer y contenedor dinámico.",
-            why:
-                "Evitar duplicación y facilitar cambios globales en estructura.",
-            next:
-                "Extraer tokens visuales a un archivo centralizado.",
+            what: "El sistema utiliza modelos como Order, OrderItem y OrderPrintLog para representar pedidos, ítems y eventos de impresión.",
+            why: "Separar cada responsabilidad en entidades claras permite mantener historial, trazabilidad y control operativo.",
+            next: "Optimizar consultas y validar índices a medida que aumente el volumen de datos."
         },
-        links: [],
+        links: [
+            {
+                label: "Repositorio EnCaja",
+                url: "https://github.com/KevinFullAd/EnCaja"
+            }
+        ]
     },
     {
-        id: "b-008",
-        date: "2026-02-14",
-        category: "Optimización",
-        project: "Infraestructura",
-        type: "DevOps",
-        title: "Cache de dependencias en CI",
+        id: "encaja-impresion-controlada",
+        date: "2026-02-19",
+        category: "Backend",
+        project: "EnCaja",
+        type: "Operación",
+        title: "Gestión del estado de impresión en comandas",
         summary:
-            "Reducí tiempos de pipeline usando cache de node_modules en GitHub Actions.",
-        tags: ["ci", "performance", "github-actions"],
+            "Implementación de estados de impresión y registro histórico para cada intento de impresión.",
+        tags: ["impresion", "log", "backend", "operacion"],
         details: {
-            what:
-                "Configuré actions/cache para dependencias basadas en hash del lockfile.",
-            why:
-                "Los builds repetían instalación completa en cada ejecución.",
-            next:
-                "Separar jobs paralelos para lint y tests.",
+            what: "Cada comanda registra un estado de impresión (PENDING, OK, ERROR) y guarda un log por cada intento realizado.",
+            why: "En un entorno físico real, las impresiones pueden fallar. Registrar estos eventos permite auditar y diagnosticar problemas.",
+            next: "Integrar la capa de impresión física manteniendo este esquema de registro."
         },
-        links: [],
+        links: [
+            {
+                label: "Repositorio EnCaja",
+                url: "https://github.com/KevinFullAd/EnCaja"
+            }
+        ]
     },
     {
-        id: "b-009",
-        date: "2026-02-12",
-        category: "Experimentación",
-        project: "API Boilerplate (NestJS)",
-        type: "Backend",
-        title: "Rate limiting global configurable",
+        id: "encaja-control-anulaciones",
+        date: "2026-02-19",
+        category: "Producto",
+        project: "EnCaja",
+        type: "Control interno",
+        title: "Control de anulaciones en un sistema POS",
         summary:
-            "Agregué limitador de requests configurable por entorno.",
-        tags: ["security", "nestjs", "api"],
+            "Restricción de anulaciones a usuarios ADMIN con registro obligatorio de motivo.",
+        tags: ["roles", "control", "seguridad", "backend"],
         details: {
-            what:
-                "Integré un guard global con límites personalizables vía variables de entorno.",
-            why:
-                "Prevenir abuso básico y proteger endpoints públicos.",
-            next:
-                "Agregar configuración por ruta específica.",
+            what: "El backend permite anular comandas únicamente a usuarios ADMIN y exige un motivo mínimo para registrar la acción.",
+            why: "Las anulaciones afectan métricas y control interno, por lo que deben quedar auditadas y restringidas.",
+            next: "Agregar visualización administrativa de comandas anuladas."
         },
-        links: [],
-    },
-    {
-        id: "b-010",
-        date: "2026-02-09",
-        category: "Refactor",
-        project: "Portfolio v3",
-        type: "UI",
-        title: "Normalización de tipografías",
-        summary:
-            "Unifiqué escalas tipográficas usando un sistema basado en tokens.",
-        tags: ["ui", "design-system", "refactor"],
-        details: {
-            what:
-                "Definí tamaños, pesos y line-height en un archivo central reutilizable.",
-            why:
-                "Había inconsistencias entre secciones.",
-            next:
-                "Aplicar mismo sistema a espaciados y colores.",
-        },
-        links: [],
-    },
-    {
-        id: "b-011",
-        date: "2026-02-05",
-        category: "Documentación",
-        project: "API Boilerplate (NestJS)",
-        type: "Backend",
-        title: "Guía de convenciones internas",
-        summary:
-            "Documenté reglas de estructura, naming y flujo de desarrollo.",
-        tags: ["documentation", "architecture", "standards"],
-        details: {
-            what:
-                "Escribí un README extendido con ejemplos de módulos, DTOs y servicios.",
-            why:
-                "Facilitar onboarding y mantener coherencia.",
-            next:
-                "Agregar ejemplos de testing.",
-        },
-        links: [],
-    },
-    {
-        id: "b-012",
-        date: "2026-02-01",
-        category: "Testing",
-        project: "API Boilerplate (NestJS)",
-        type: "Backend",
-        title: "Setup inicial de tests e2e",
-        summary:
-            "Configuré entorno básico para pruebas end-to-end.",
-        tags: ["testing", "nestjs", "quality"],
-        details: {
-            what:
-                "Añadí Jest e2e con entorno aislado y base de datos mock.",
-            why:
-                "Asegurar estabilidad en endpoints críticos.",
-            next:
-                "Agregar tests de autenticación y casos de error.",
-        },
-        links: [],
-    },
-    {
-        id: "b-013",
-        date: "2026-01-27",
-        category: "UX",
-        project: "Portfolio v3",
-        type: "Frontend",
-        title: "Estados vacíos consistentes",
-        summary:
-            "Definí componente reutilizable para empty states.",
-        tags: ["ux", "components", "react"],
-        details: {
-            what:
-                "Creé un componente EmptyState configurable con icono y mensaje.",
-            why:
-                "Cada sección manejaba estados sin datos de forma distinta.",
-            next:
-                "Agregar variantes para error y loading.",
-        },
-        links: [],
-    },
-    {
-        id: "b-014",
-        date: "2026-01-24",
-        category: "Seguridad",
-        project: "Infraestructura",
-        type: "DevOps",
-        title: "Headers de seguridad básicos",
-        summary:
-            "Implementé configuración inicial de headers HTTP seguros.",
-        tags: ["security", "http", "best-practices"],
-        details: {
-            what:
-                "Configuré helmet con políticas estándar.",
-            why:
-                "Reducir superficie de ataque en entornos públicos.",
-            next:
-                "Evaluar CSP personalizada.",
-        },
-        links: [],
-    },
-    {
-        id: "b-015",
-        date: "2026-01-20",
-        category: "Planificación",
-        project: "Portfolio v3",
-        type: "Producto",
-        title: "Roadmap modular del proyecto",
-        summary:
-            "Definí fases claras para evolución del portfolio.",
-        tags: ["planning", "roadmap", "architecture"],
-        details: {
-            what:
-                "Organicé el roadmap en fases: base, mejoras UX, optimización y contenido.",
-            why:
-                "Evitar crecimiento desordenado.",
-            next:
-                "Priorizar features según impacto.",
-        },
-        links: [],
+        links: [
+            {
+                label: "Repositorio EnCaja",
+                url: "https://github.com/KevinFullAd/EnCaja"
+            }
+        ]
     }
-
-
-];
+]

@@ -11,9 +11,10 @@ export function ServiceCard({ title, description, icon, className = "" }) {
     return (
         <div
             className={`
-            rounded-2xl border border-(--border)
-            p-5 md:p-6 transition hover:brightness-110
-            ${className}
+                h-full
+                rounded-2xl border border-(--border)
+                p-5 md:p-6 transition hover:brightness-110
+                ${className}
             `}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
