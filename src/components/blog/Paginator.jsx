@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Muted } from "../ui/primitives/typography/Muted";
-
+import Btn from "../ui/primitives/Btn";
 export default function Paginator({ page = 1, pageCount = 0, onPage }) {
 
     useEffect(() => {
@@ -45,20 +45,6 @@ export default function Paginator({ page = 1, pageCount = 0, onPage }) {
     if (end < pageCount - 1) numbers.push("…");
     numbers.push(pageCount);
 
-    const Btn = ({ children, active, disabled, onClick }) => (
-        <button
-            type="button"
-            disabled={disabled}
-            onClick={onClick}
-            className="rounded-full px-4 py-2 text-sm border border-(--border) transition disabled:opacity-50"
-            style={{
-                background: active ? "rgb(var(--accent-rgb) / 0.10)" : "rgb(255 255 255 / 0.02)",
-                color: active ? "var(--accent-solid)" : "var(--text)",
-            }}
-        >
-            {children}
-        </button>
-    );
 
     return (
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between pt-2">

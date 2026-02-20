@@ -38,17 +38,16 @@ export default function ContactFormSection({
             return alert("El mensaje debe tener al menos 10 caracteres.");
         }
 
-        try {
-            setLocalStatus("loading");
+        const response = await fetch("/api/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
 
-            await new Promise((r) => setTimeout(r, 700));
-
-            await onSubmit(e);
-
-            setLocalStatus("success");
-        } catch (error) {
-            console.error(error);
-            setLocalStatus("error");
+        if (!response.ok) {
+            throw new Error("Error enviando formulario");
         }
     };
 
@@ -70,7 +69,7 @@ export default function ContactFormSection({
 
                 <form
                     onSubmit={handleSubmit}
-                    className="border flex flex-col gap-2"
+                    className="flex flex-col gap-2"
                 >
                     <input
                         type="text"
@@ -159,7 +158,7 @@ export default function ContactFormSection({
                         required
                     />
 
-                    <div className="flex flex-col border sm:flex-row sm:items-center sm:justify-between pt-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-1">
                         <Muted className="text-sm">
                             {form.directText}{" "}
                             <ThemedLink href={`mailto:${email}`}>

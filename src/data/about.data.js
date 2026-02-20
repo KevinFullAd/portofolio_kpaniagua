@@ -39,8 +39,7 @@ export const aboutData = {
             desc: "Proyectos y casos reales",
         },
         contactCta: {
-            title: "Escribime",
-            // el valor se toma desde closing.links[0].value por defecto si existe
+            title: "Escribime", 
         },
     },
 
@@ -132,7 +131,7 @@ export const aboutData = {
             "Podés ver mis proyectos en el portfolio o contactarme directamente.",
         ],
         linksTitle: "Links",
-        links: [
+        links: [ 
             {
                 label: "Contacto",
                 href: "/contact",
