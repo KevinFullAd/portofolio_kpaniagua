@@ -15,10 +15,6 @@ export default function ContactSidebarSection({ email, sidebar }) {
                     <div className="text-(--text) font-semibold">{sidebar.channelsTitle}</div>
                     <Muted className="mt-1">{sidebar.channelsLead}</Muted>
 
-                    <div className="mt-4 flex flex-wrap gap-2">
-                        <ContactPill className="text-sm" href={`mailto:${email}`} label={email} />
-                    </div>
-
                     <Divider className="my-4 opacity-60" />
 
                     <div className="space-y-2">

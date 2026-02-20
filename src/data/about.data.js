@@ -141,5 +141,6 @@ export const aboutData = {
             // { label: "LinkedIn", href: "https://linkedin.com/in/tuusuario", value: "linkedin.com/in/tuusuario" },
             // { label: "GitHub", href: "https://github.com/tuusuario", value: "github.com/in/tuusuario" },
         ],
+        
     },
 };

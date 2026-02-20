@@ -55,8 +55,8 @@ export default function ContactFormSection({
     const isLoading = localStatus === "loading";
 
     return (
-        <Reveal as="section" className={"h-full"} amount={0.22} once>
-            <SoftCard className="p-5 h-full md:p-6">
+        <Reveal as="section" className={""} amount={0.22} once>
+            <SoftCard className="p-5 h-full flex flex-col gap-4 justify-between md:p-6">
                 <div className="flex items-start justify-between gap-4">
                     <div className="space-y-1">
                         <div className="text-(--text) font-semibold text-lg">
@@ -66,11 +66,11 @@ export default function ContactFormSection({
                     </div>
                 </div>
 
-                <Divider className="my-4 opacity-60" />
+                <Divider className="opacity-60" />
 
                 <form
                     onSubmit={handleSubmit}
-                    className="space-y-4 flex flex-col"
+                    className="border flex flex-col gap-2"
                 >
                     <input
                         type="text"
@@ -155,11 +155,11 @@ export default function ContactFormSection({
                         placeholder={form.placeholders.message}
                         value={formData.message}
                         onChange={onChange}
-                        rows={7}
+                        rows={10}
                         required
                     />
 
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-1">
+                    <div className="flex flex-col border sm:flex-row sm:items-center sm:justify-between pt-1">
                         <Muted className="text-sm">
                             {form.directText}{" "}
                             <ThemedLink href={`mailto:${email}`}>

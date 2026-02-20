@@ -6,12 +6,97 @@ import { SoftCard } from "../../ui/cards/SoftCard";
 import { AbstractBackground } from "../../ui/graphics/AbstractBackground";
 
 export default function ResumeClosingSection({ closing }) {
+
+    const cv = closing?.cv;
+    const hasCv = Boolean(cv?.href);
+
+    const isExternal = (href) => /^https?:\/\//i.test(href || "");
+    const isFile = (href) =>
+        /\.(pdf|doc|docx)$/i.test(href || "") || (href || "").includes("/assets/");
+
+
     return (
         <Reveal as="section" className="space-y-5">
             <div className="space-y-2">
                 <Eyebrow>{closing.eyebrow}</Eyebrow>
                 <H3>{closing.title}</H3>
                 <Muted>{closing.description}</Muted>
+                {/* CTA CV (primero) */}
+                {hasCv && (
+                    <SoftCard className="relative !bg-red-500 overflow-hidden">
+                        {/* halo sutil */}
+                        <span
+                            className="pointer-events-none absolute -top-8 -right-10 h-32 w-32 rounded-full blur-2xl"
+                            style={{
+                                background: "rgb(var(--accent-rgb) / 0.18)",
+                            }}
+                        />
+
+                        <div className="relative">
+                            <Eyebrow>{cv?.label || "CV"}</Eyebrow>
+
+                            <div className="mt-2 flex items-start justify-between gap-4">
+                                <div className="min-w-0">
+                                    <div className="text-(--text) font-semibold text-base">
+                                        {cv?.title || "Descargar CV"}
+                                    </div>
+                                    <div className="text-(--text-muted) text-sm leading-relaxed">
+                                        {cv?.desc || "PDF actualizado para revisar experiencia y proyectos."}
+                                    </div>
+                                </div>
+
+                                <span
+                                    className="material-icons-outlined"
+                                    style={{ color: "var(--accent-solid)" }}
+                                    aria-hidden="true"
+                                >
+                                    download
+                                </span>
+                            </div>
+
+                            <div className="mt-4">
+                                <a
+                                    href={cv.href}
+                                    // download solo si parece archivo y no es externo (evita problemas CORS)
+                                    download={!isExternal(cv.href) && isFile(cv.href) ? (cv?.fileName || true) : undefined}
+                                    target={isExternal(cv.href) ? "_blank" : undefined}
+                                    rel={isExternal(cv.href) ? "noreferrer" : undefined}
+                                    className="
+                          group inline-flex w-full items-center justify-between
+                          rounded-xl border border-(--border)
+                          px-4 py-3 transition
+                          hover:brightness-110
+                        "
+                                    style={{
+                                        background: "rgb(var(--accent-rgb) / 0.10)",
+                                        boxShadow: "0 0 18px rgb(var(--accent-rgb) / 0.14)",
+                                    }}
+                                >
+                                    <span
+                                        className="text-sm font-semibold"
+                                        style={{ color: "var(--accent-solid)" }}
+                                    >
+                                        {cv?.buttonText || "Descargar CV"}
+                                    </span>
+
+                                    <span
+                                        className="material-icons-outlined text-sm transition-transform duration-200 group-hover:translate-x-0.5"
+                                        style={{ color: "var(--accent-solid)" }}
+                                        aria-hidden="true"
+                                    >
+                                        arrow_forward
+                                    </span>
+                                </a>
+
+                                <div className="mt-2 text-xs text-(--text-muted)">
+                                    {isExternal(cv.href)
+                                        ? "Se abre en una pestaña nueva."
+                                        : "Descarga directa en PDF."}
+                                </div>
+                            </div>
+                        </div>
+                    </SoftCard>
+                )}
             </div>
 
             <Reveal>

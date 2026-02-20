@@ -8,7 +8,7 @@ export const portfolioData = {
             tag: "Sistema · Producto Digital",
             title: "Encaja - Sistema POS",
             description:
-                "Sistema de punto de venta orientado a entornos gastronómicos para registrar pedidos y generar comandas claras, reduciendo errores operativos y mejorando tiempos de servicio.",
+                "Sistema POS para entornos gastronómicos: registrar pedidos y emitir comandas térmicas claras, reduciendo errores operativos y mejorando tiempos de servicio.",
             stack: "Sistema interno · MVP en desarrollo",
             cta: "Ver proyecto",
             coverVariant: "layers",
@@ -16,7 +16,7 @@ export const portfolioData = {
             detail: {
                 hero: {
                     summary:
-                        "MVP desarrollado para digitalizar la toma de pedidos en una hamburguesería que operaba con anotaciones manuales y mensajes de WhatsApp, integrando generación automática de comandas térmicas y registro persistente de pedidos.",
+                        "MVP en desarrollo para digitalizar la toma de pedidos en una hamburguesería que operaba con papel y WhatsApp. Centraliza el registro, imprime comandas térmicas para cocina y deja persistencia desde el día uno.",
                     links: [],
                 },
 
@@ -32,28 +32,28 @@ export const portfolioData = {
                         id: "problem",
                         title: "Problema",
                         bullets: [
-                            "Los pedidos se registraban manualmente en papel o desde un celular.",
-                            "La comunicación directa entre caja y cocina generaba errores frecuentes.",
-                            "No existía control claro de pedidos realizados ni seguimiento histórico.",
-                            "La falta de estructura dificultaba el control real de ingresos y ventas."
+                            "Los pedidos se registraban a mano (papel) o desde un celular.",
+                            "La comunicación caja ↔ cocina generaba errores y repeticiones.",
+                            "No había un historial confiable de pedidos para revisar o auditar.",
+                            "El control real de ingresos/ventas quedaba atado a memoria y anotaciones.",
                         ],
                     },
                     {
                         id: "goal",
                         title: "Objetivo",
                         paragraphs: [
-                            "Digitalizar la toma de pedidos mediante un sistema simple y estable que permita generar comandas térmicas claras para cocina y mantener un registro persistente de cada operación."
+                            "Digitalizar la toma de pedidos con un sistema simple y estable: registrar operaciones rápido, emitir comandas térmicas claras para cocina y mantener persistencia para control y evolución futura.",
                         ],
                     },
                     {
                         id: "solution",
                         title: "Solución",
                         bullets: [
-                            "CRUD de productos configurable desde base de datos.",
-                            "Creación rápida de pedidos con agregado dinámico de productos.",
+                            "Productos configurables desde base de datos (CRUD).",
+                            "Creación rápida de pedidos con agregado dinámico de ítems.",
                             "Cálculo automático de totales.",
-                            "Generación de comanda térmica estructurada para cocina.",
-                            "Persistencia de pedidos en base de datos para control posterior."
+                            "Impresión de comanda térmica con estructura clara para cocina.",
+                            "Persistencia de pedidos en base de datos desde el MVP.",
                         ],
                     },
                 ],
@@ -63,24 +63,23 @@ export const portfolioData = {
                     steps: [
                         {
                             title: "Creación de pedido",
-                            description:
-                                "El operador registra un nuevo pedido desde caja."
+                            description: "El operador inicia un pedido nuevo desde caja.",
                         },
                         {
                             title: "Carga de productos",
                             description:
-                                "Se agregan productos disponibles con cálculo automático del total."
+                                "Agrega ítems disponibles con cálculo automático del total (sin pasos innecesarios).",
                         },
                         {
                             title: "Impresión de comanda",
                             description:
-                                "Al finalizar, se genera automáticamente una comanda térmica clara para cocina."
+                                "Al confirmar, se imprime una comanda térmica clara para cocina con jerarquía visual.",
                         },
                         {
                             title: "Registro persistente",
                             description:
-                                "El pedido queda almacenado en base de datos para control y futura expansión contable."
-                        }
+                                "El pedido queda guardado en base de datos para control, revisión y expansión contable futura.",
+                        },
                     ],
                 },
 
@@ -90,23 +89,23 @@ export const portfolioData = {
                         {
                             decision: "Interfaz enfocada en velocidad operativa",
                             reason:
-                                "El sistema es utilizado por una sola persona en momentos de alta demanda."
+                                "Se usa por una sola persona en momentos de alta demanda: el flujo tiene que ser directo.",
                         },
                         {
-                            decision: "Comanda con estructura clara y jerarquía visual",
+                            decision: "Comanda con jerarquía visual",
                             reason:
-                                "La cocina está separada físicamente, por lo que la claridad reduce errores de interpretación."
+                                "Con cocina separada, la claridad en el papel reduce errores de interpretación.",
                         },
                         {
                             decision: "Persistencia desde el MVP",
                             reason:
-                                "Permite evolución futura hacia control contable sin reconstruir el sistema."
+                                "Habilita evolución (reportes/control) sin reconstruir el núcleo del sistema.",
                         },
                         {
-                            decision: "Alcance reducido intencionalmente",
+                            decision: "Alcance reducido a propósito",
                             reason:
-                                "Se priorizó resolver el problema central antes de agregar complejidad innecesaria."
-                        }
+                                "Primero resolver el problema central; después sumar módulos sin inflar complejidad.",
+                        },
                     ],
                 },
 
@@ -116,10 +115,10 @@ export const portfolioData = {
                         "Diseño funcional orientado a operación rápida.",
                         "Jerarquía clara para lectura inmediata.",
                         "Minimización de pasos para completar un pedido.",
-                        "Optimización para uso continuo en entorno real de trabajo."
+                        "Optimizado para uso continuo en un entorno real de trabajo.",
                     ],
                 },
             },
-        }
+        },
     ],
 };

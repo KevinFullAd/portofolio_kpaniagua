@@ -6,14 +6,14 @@ export const contactData = {
         eyebrow: "Contacto",
         title: "Contactame",
         lead:
-            "Si querés escalar un proyecto o estás evaluando sumar a alguien al equipo, dejame un mensaje. Respondo por mail.",
+            "Si estás evaluando iniciar o mejorar un proyecto, escribime. Con contexto claro puedo responder de forma concreta.",
         chips: ["Proyectos", "Freelance", "Colaboraciones"],
     },
 
     form: {
         title: "Enviar mensaje",
         hint:
-            "Ideal si me contás contexto + objetivo + plazo. Con eso ya puedo responder con algo concreto.",
+            "Si incluís contexto + objetivo + plazo, puedo darte una respuesta más precisa desde el primer intercambio.",
         areas: [
             { key: "frontend", label: "Frontend" },
             { key: "uiux", label: "UI/UX" },
@@ -26,17 +26,17 @@ export const contactData = {
             lastName: "Apellido",
             email: "tu@email.com",
             subject: "Ej: Propuesta / Consulta / Proyecto",
-            message: "Qué necesitás, para quién, y en qué plazo…",
+            message: "Contexto, objetivo y plazo estimado…",
         },
-        ctaText: "send",
-        directText: "Si preferís directo:",
+        ctaText: "Enviar",
+        directText: "Si preferís escribir directo:",
         directLinkText: "usar email",
-        demoSuccess: "Mensaje listo (modo demo).",
+        demoSuccess: "Mensaje preparado (modo demo).",
     },
 
     sidebar: {
         channelsTitle: "Canales",
-        channelsLead: "Elegí el que te resulte más cómodo.",
+        channelsLead: "Elegí el medio que te resulte más práctico.",
         quickActions: [
             {
                 title: "Email",
@@ -60,11 +60,11 @@ export const contactData = {
         ],
 
         fastTitle: "Para avanzar rápido",
-        fastLead: "3 líneas y estamos.",
+        fastLead: "Con estos tres puntos ya podemos empezar.",
         bullets: [
-            { title: "Contexto", desc: "Qué es el proyecto y para quién." },
-            { title: "Objetivo", desc: "Qué querés lograr (resultado esperado)." },
-            { title: "Plazo", desc: "Fecha ideal o prioridad." },
+            { title: "Contexto", desc: "Qué es el proyecto y a quién está dirigido." },
+            { title: "Objetivo", desc: "Resultado esperado o problema a resolver." },
+            { title: "Plazo", desc: "Fecha estimada o nivel de prioridad." },
         ],
     },
 };

@@ -4,14 +4,14 @@ export const resumeData = {
         eyebrow: "Resume",
         title: "Cómo llegué hasta acá",
         lead:
-            "Mi recorrido en tecnología no fue lineal, pero sí constante. Aprendí probando, equivocándome y haciéndome cargo de sistemas reales.",
+            "Mi recorrido en tecnología no fue lineal, pero sí constante. Aprendí haciendo: probando, equivocándome y resolviendo cosas reales en producción.",
         chips: ["Full Stack", "Frontend", "Backend en evolución", "Sistemas"],
     },
 
     timeline: {
         title: "Evolución",
         description:
-            "No se trata solo de fechas, sino de qué aprendí en cada etapa y cómo eso influyó en lo que hago hoy.",
+            "Más que fechas, son etapas: qué hice, qué entendí y qué cambió en mi forma de trabajar.",
         items: [
             {
                 id: "unq",
@@ -19,7 +19,7 @@ export const resumeData = {
                 title: "UNQ — Primer contacto serio con IT",
                 period: "2023 — 2024",
                 note:
-                    "Iniciar la carrera en la UNQ me abrió los ojos. Empecé a entender cómo funciona el mundo IT y descubrí una pasión real por la tecnología. No fue un buen cierre académico, pero sí un punto de inflexión personal.",
+                    "Arranqué en la UNQ y fue el primer choque con el mundo IT de verdad. Entendí conceptos, empecé a conectar piezas y confirmé que esto me gustaba en serio. No fue un buen cierre académico, pero sí el punto donde me acomodé mentalmente para tomármelo en serio.",
             },
             {
                 id: "utn",
@@ -27,7 +27,7 @@ export const resumeData = {
                 title: "UTN — Consolidación y foco",
                 period: "2024 — Actualidad",
                 note:
-                    "Retomé la formación con otra mentalidad: constancia, práctica y objetivos claros. Hoy estoy terminando de formarme como técnico en programación, con una base mucho más sólida.",
+                    "Retomé la formación con otra cabeza: constancia, práctica y objetivos claros. Hoy estoy terminando de formarme como técnico en programación, con una base mucho más sólida y aplicable al trabajo real.",
             },
             {
                 id: "react-course",
@@ -35,7 +35,7 @@ export const resumeData = {
                 title: "React — El punto de quiebre",
                 period: "2024",
                 note:
-                    "Un curso de React marcó un antes y un después. Desde entonces me dedico principalmente al frontend, con foco en interfaces claras, escalables y bien pensadas.",
+                    "Un curso de React me destrabó todo. Desde ahí mi foco pasó a ser frontend: componentes reutilizables, UI consistente, y pantallas que se entienden sin explicación.",
             },
             {
                 id: "xg-support",
@@ -43,9 +43,9 @@ export const resumeData = {
                 title: "XG Networks — Soporte técnico",
                 period: "2024",
                 bullets: [
-                    "Ingreso como soporte técnico.",
+                    "Ingreso como soporte técnico y empiezo a operar en escenarios reales.",
                     "Trabajo con redes y equipos (Cambium, TP-Link, entre otros).",
-                    "Resolución de incidencias reales en entornos productivos.",
+                    "Resolución de incidencias reales con impacto directo en el servicio.",
                 ],
             },
             {
@@ -54,12 +54,12 @@ export const resumeData = {
                 title: "XG Networks — Área de Sistemas",
                 period: "2025 — Actualidad",
                 note:
-                    "Después de un año de compromiso constante, fui promovido como asistente del área de sistemas. Desde entonces pasé por prácticamente todas las áreas técnicas.",
+                    "Después de un año de laburo constante, pasé al área de sistemas. Ahí empecé a tocar de todo: desarrollo, servidores, bases, redes e infraestructura. Esa mezcla me dio una visión más completa: no pensar solo en código, sino en el sistema entero.",
                 bullets: [
-                    "Desarrollo frontend y backend.",
+                    "Desarrollo frontend y backend según necesidad del negocio.",
                     "Diseño y mantenimiento de bases de datos.",
                     "Administración de servidores (Windows Server y Ubuntu Server).",
-                    "Trabajo intensivo con Linux.",
+                    "Trabajo intensivo con Linux (deploy, servicios, troubleshooting).",
                     "Redes, infraestructura y mantenimiento de hardware.",
                 ],
             },
@@ -73,29 +73,29 @@ export const resumeData = {
                 id: "frontend",
                 title: "Frontend con criterio",
                 desc:
-                    "Trabajo con React y Tailwind buscando claridad visual, reutilización de componentes y una buena experiencia de usuario.",
+                    "Trabajo con React y Tailwind con foco en claridad visual, componentes reutilizables y UX simple. Si algo confunde, se rediseña.",
             },
             {
                 id: "backend",
                 title: "Backend en crecimiento",
                 desc:
-                    "Estoy profundizando en Node.js y NestJS, explorando arquitectura, APIs y lógica de negocio más robusta.",
+                    "Estoy profundizando Node.js y NestJS: APIs, arquitectura, validaciones, flujos y lógica de negocio más seria.",
             },
             {
                 id: "systems",
                 title: "Visión integral de sistemas",
                 desc:
-                    "Haber pasado por soporte, redes, servidores y hardware me permite pensar soluciones completas, no solo código.",
+                    "Haber pasado por soporte, redes, servidores y hardware me obliga a pensar extremo a extremo: qué falla, por qué, y cómo se sostiene en el tiempo.",
             },
             {
                 id: "learning",
                 title: "Aprendizaje constante",
                 desc:
-                    "Me interesa entender el porqué de las cosas. Investigo, pruebo y documento para poder escalar y mejorar.",
+                    "Me interesa entender el porqué. Investigo, pruebo y documento para que lo que hago sea replicable y mantenible.",
             },
         ],
     },
-    
+
     certifications: {
         title: "Formación complementaria",
         items: [
@@ -104,7 +104,7 @@ export const resumeData = {
                 title: "Azure — Fundamentos de Cloud",
                 org: "Junior Achievement Argentina",
                 description:
-                    "Me dio una base sólida sobre cómo funciona la nube, la infraestructura y los servicios, conceptos que hoy aplico al pensar sistemas reales.",
+                    "Me dio una base sólida de nube e infraestructura: servicios, conceptos y criterio para pensar despliegues y arquitectura con más claridad.",
                 link: "https://drive.google.com/file/d/1JLVyM44kJRO7krF4QDS-UZ4-kxNgj5fh/view",
             },
             {
@@ -112,21 +112,27 @@ export const resumeData = {
                 title: "React — Desarrollo Frontend",
                 org: "Codo a Codo",
                 description:
-                    "Fue el punto de quiebre que definió mi camino profesional y mi enfoque actual en frontend.",
+                    "Fue el quiebre que ordenó mi perfil: me dio base real de React y me llevó a enfocarme en frontend y diseño de interfaces.",
                 link: "https://drive.google.com/file/d/1EttY8wnIhQ5nWKsM7sjRC-jjcoBcmkPH/view",
             },
         ],
     },
 
-
     closing: {
         eyebrow: "Hoy",
         title: "Hacia dónde voy",
         description:
-            "Actualmente apunto a profundizarme en desarrollo backend, sin perder la mirada de producto y sistema completo.",
+            "Apunto a profundizarme en backend sin perder la mirada de producto y de sistema completo.",
         paragraphs: [
-            "Sigo trabajando y aprendiendo en entornos reales, combinando frontend, backend y sistemas.",
+            "Sigo trabajando y aprendiendo en entornos reales, combinando frontend, backend y sistemas según el contexto.",
             "Mi objetivo es crecer como desarrollador integral, con foco en Node.js, NestJS y arquitectura de software.",
         ],
+        cv: {
+            href: "/assets/cv/kevin_paniagua_cv.pdf",
+            title: "Descargar CV",
+            desc: "PDF actualizado",
+            fileName: "Kevin_Paniagua_cv.pdf",
+            buttonText: "Descargar CV",
+        },
     },
 };

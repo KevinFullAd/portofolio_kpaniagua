@@ -7,10 +7,22 @@ import { SoftCard } from "../../ui/cards/SoftCard.jsx";
 import { ContactPill } from "../../ui/ContactPill.jsx";
 import { Divider } from "../../ui/primitives/Divider.jsx";
 
+/**
+ * Espera en closing (opcional):
+ * closing.cv = {
+ *   label?: "CV",
+ *   title?: "Descargar CV",
+ *   desc?: "PDF actualizado",
+ *   href: "/assets/cv/kevin-paniagua-cv.pdf" | "https://...",
+ *   fileName?: "Kevin_Paniagua_CV.pdf", // sugerido si es asset local
+ * }
+ */
+
 export default function AboutClosingSection({ closing }) {
     const paragraphs = closing?.paragraphs ?? [];
     const links = closing?.links ?? [];
 
+    
     return (
         <>
             <Reveal y={6} duration={0.35}>
@@ -21,12 +33,11 @@ export default function AboutClosingSection({ closing }) {
                 <div>
                     <Eyebrow>{closing?.eyebrow || "Contacto"}</Eyebrow>
                     <H3>{closing?.title}</H3>
-                    {closing?.description && (
-                        <Muted className="mt-2">{closing.description}</Muted>
-                    )}
+                    {closing?.description && <Muted className="mt-2">{closing.description}</Muted>}
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center align-middle gap-6 md:gap-10">
+                <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-10">
+                    {/* Texto */}
                     <div className="flex-1 space-y-2">
                         {paragraphs.map((p, i) => (
                             <p
@@ -42,21 +53,23 @@ export default function AboutClosingSection({ closing }) {
                         ))}
                     </div>
 
-                    {links.length > 0 && (
-                        <div className="w-full md:w-[320px]">
-                            <SoftCard>
-                                <Eyebrow>{closing?.linksTitle || "Links"}</Eyebrow>
+                    {/* Panel lateral: Links + CV */}
+                    {(links.length > 0) && (
+                        <div className="w-full md:w-[340px] flex flex-col gap-4">
+                            
 
-                                <div className="mt-4 flex flex-wrap gap-2">
-                                    {links.map((l) => (
-                                        <ContactPill
-                                            key={l.href}
-                                            href={l.href}
-                                            label={`${l.label}: ${l.value}`}
-                                        />
-                                    ))}
-                                </div>
-                            </SoftCard>
+                            {/* Links */}
+                            {links.length > 0 && (
+                                <SoftCard>
+                                    <Eyebrow>{closing?.linksTitle || "Links"}</Eyebrow>
+
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        {links.map((l) => (
+                                            <ContactPill key={l.href} href={l.href} label={`${l.label}: ${l.value}`} />
+                                        ))}
+                                    </div>
+                                </SoftCard>
+                            )}
                         </div>
                     )}
                 </div>
