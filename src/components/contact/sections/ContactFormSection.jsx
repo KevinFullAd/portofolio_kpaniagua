@@ -38,7 +38,7 @@ export default function ContactFormSection({
             return alert("El mensaje debe tener al menos 10 caracteres.");
         }
 
-        await fetch("/api/contact", {
+        const response = await fetch("/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
