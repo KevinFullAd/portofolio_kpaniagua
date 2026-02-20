@@ -7,31 +7,25 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Method not allowed" });
     }
 
-    const { firstName, lastName, email, subject, message, area } = req.body;
-
-    if (!firstName || !email || !message) {
-        return res.status(400).json({ error: "Missing fields" });
-    }
-
     try {
+        const { firstName, lastName, email, subject, message } = req.body;
+
         await resend.emails.send({
-            from: "onboarding@resend.dev",
+            from: "Portfolio <onboarding@resend.dev>",
             to: "paniagua.kevin.damian@gmail.com",
             subject: subject || "Nuevo mensaje desde portfolio",
-            reply_to: email,
-            text: `
-                Nombre: ${firstName} ${lastName}
-                Email: ${email}
-                Área: ${area}
-
-                Mensaje:
-                ${message}
-                    `,
+            html: `
+        <h3>Nuevo mensaje</h3>
+        <p><strong>Nombre:</strong> ${firstName} ${lastName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong></p>
+        <p>${message}</p>
+      `,
         });
 
-        return res.status(200).json({ success: true });
+        return res.status(200).json({ ok: true });
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: "Error sending email" });
+        return res.status(500).json({ error: "Error enviando formulario" });
     }
 }
