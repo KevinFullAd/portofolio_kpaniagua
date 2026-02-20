@@ -11,7 +11,7 @@ export default function ProjectDecisionsSection({ decisions }) {
             <div className="grid gap-3 md:grid-cols-2">
                 {decisions.items.map((it, idx) => (
                     <Reveal key={it.decision} delay={0.05 * idx}>
-                        <SoftCard className="p-4">
+                        <SoftCard className="p-4 h-full">
                             <div className="text-(--text) font-semibold">
                                 {it.decision}
                             </div>

@@ -9,7 +9,7 @@ import Bullet from "../../ui/primitives/Bullet";
 
 export default function ContactSidebarSection({ email, sidebar }) {
     return (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col justify-between h-full gap-4">
             <Reveal as="section" amount={0.18} once>
                 <SoftCard className="p-5 h-full">
                     <div className="text-(--text) font-semibold">{sidebar.channelsTitle}</div>
@@ -30,7 +30,7 @@ export default function ContactSidebarSection({ email, sidebar }) {
             </Reveal>
 
             <Reveal as="section" amount={0.18} once>
-                <SoftCard className="p-5 h-full">
+                <SoftCard className="mt">
                     <div className="text-(--text) font-semibold">{sidebar.fastTitle}</div>
                     <Muted className="mt-1">{sidebar.fastLead}</Muted>
 

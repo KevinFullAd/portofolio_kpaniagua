@@ -4,31 +4,27 @@ export const portfolioData = {
 
     works: [
         {
-            id: "mil-comidas",
-            tag: "App · UX/UI",
-            title: "Mil comidas",
-            description: "Recetas y sugerencias en base a ingredientes disponibles y preferencias.",
-            stack: "React · API · TailwindCSS",
+            id: "pos-encaja",
+            tag: "Sistema · Producto Digital",
+            title: "Encaja - Sistema POS",
+            description:
+                "Sistema de punto de venta orientado a entornos gastronómicos para registrar pedidos y generar comandas claras, reduciendo errores operativos y mejorando tiempos de servicio.",
+            stack: "Sistema interno · MVP en desarrollo",
             cta: "Ver proyecto",
             coverVariant: "layers",
 
-            // Detalle (solo textos / estructura escalable)
             detail: {
                 hero: {
                     summary:
-                        "Generador de recetas personalizadas a partir de lo que ya tenés en casa, con filtros simples y resultados accionables.",
-                    links: [
-                        // { label: "Demo", href: "https://..." },
-                        // { label: "Figma", href: "https://..." },
-                        // { label: "GitHub", href: "https://..." },
-                    ],
+                        "MVP desarrollado para digitalizar la toma de pedidos en una hamburguesería que operaba con anotaciones manuales y mensajes de WhatsApp, integrando generación automática de comandas térmicas y registro persistente de pedidos.",
+                    links: [],
                 },
 
                 highlights: [
-                    { label: "Rol", value: "UI/UX · Frontend" },
-                    { label: "Plataforma", value: "Mobile-first" },
-                    { label: "Estado", value: "Concept / MVP" },
-                    { label: "Stack", value: "React · API · TailwindCSS" },
+                    { label: "Rol", value: "Análisis · Arquitectura · Desarrollo completo" },
+                    { label: "Tipo", value: "Sistema interno operativo" },
+                    { label: "Entorno", value: "Hamburguesería · Cocina separada" },
+                    { label: "Enfoque", value: "Orden operativo · Reducción de errores" },
                 ],
 
                 sections: [
@@ -36,57 +32,94 @@ export const portfolioData = {
                         id: "problem",
                         title: "Problema",
                         bullets: [
-                            "Decidir qué cocinar con ingredientes limitados suele ser lento y frustrante.",
-                            "La mayoría de soluciones obligan a buscar manualmente y filtrar en exceso.",
-                            "Los resultados no siempre son accionables (faltan pasos claros o alternativas).",
+                            "Los pedidos se registraban manualmente en papel o desde un celular.",
+                            "La comunicación directa entre caja y cocina generaba errores frecuentes.",
+                            "No existía control claro de pedidos realizados ni seguimiento histórico.",
+                            "La falta de estructura dificultaba el control real de ingresos y ventas."
                         ],
                     },
                     {
                         id: "goal",
                         title: "Objetivo",
                         paragraphs: [
-                            "Reducir la fricción de la decisión y convertir ingredientes disponibles en opciones claras en pocos pasos, priorizando una experiencia móvil rápida y legible.",
+                            "Digitalizar la toma de pedidos mediante un sistema simple y estable que permita generar comandas térmicas claras para cocina y mantener un registro persistente de cada operación."
                         ],
                     },
                     {
                         id: "solution",
                         title: "Solución",
                         bullets: [
-                            "Ingreso rápido de ingredientes (mínimo esfuerzo).",
-                            "Preferencias simples (dieta, tiempo, gustos).",
-                            "Recetas generadas con pasos claros y alternativas posibles.",
+                            "CRUD de productos configurable desde base de datos.",
+                            "Creación rápida de pedidos con agregado dinámico de productos.",
+                            "Cálculo automático de totales.",
+                            "Generación de comanda térmica estructurada para cocina.",
+                            "Persistencia de pedidos en base de datos para control posterior."
                         ],
                     },
                 ],
 
                 flow: {
-                    title: "Flujo principal",
+                    title: "Flujo operativo",
                     steps: [
-                        { title: "Ingredientes", description: "Seleccionás lo que tenés disponible en casa." },
-                        { title: "Preferencias", description: "Indicás restricciones, gustos y tiempo." },
-                        { title: "Resultados", description: "Recetas viables, claras y listas para ejecutar." },
+                        {
+                            title: "Creación de pedido",
+                            description:
+                                "El operador registra un nuevo pedido desde caja."
+                        },
+                        {
+                            title: "Carga de productos",
+                            description:
+                                "Se agregan productos disponibles con cálculo automático del total."
+                        },
+                        {
+                            title: "Impresión de comanda",
+                            description:
+                                "Al finalizar, se genera automáticamente una comanda térmica clara para cocina."
+                        },
+                        {
+                            title: "Registro persistente",
+                            description:
+                                "El pedido queda almacenado en base de datos para control y futura expansión contable."
+                        }
                     ],
                 },
 
                 decisions: {
-                    title: "Decisiones de diseño",
+                    title: "Decisiones clave",
                     items: [
-                        { decision: "CTA único y visible", reason: "Reduce indecisión y acelera el avance." },
-                        { decision: "Jerarquía tipográfica fuerte", reason: "Lectura rápida en mobile." },
-                        { decision: "Inputs mínimos", reason: "Aumenta velocidad percibida y reduce abandono." },
-                        { decision: "Cards por resultado", reason: "Comparación rápida y escaneable." },
+                        {
+                            decision: "Interfaz enfocada en velocidad operativa",
+                            reason:
+                                "El sistema es utilizado por una sola persona en momentos de alta demanda."
+                        },
+                        {
+                            decision: "Comanda con estructura clara y jerarquía visual",
+                            reason:
+                                "La cocina está separada físicamente, por lo que la claridad reduce errores de interpretación."
+                        },
+                        {
+                            decision: "Persistencia desde el MVP",
+                            reason:
+                                "Permite evolución futura hacia control contable sin reconstruir el sistema."
+                        },
+                        {
+                            decision: "Alcance reducido intencionalmente",
+                            reason:
+                                "Se priorizó resolver el problema central antes de agregar complejidad innecesaria."
+                        }
                     ],
                 },
 
                 visual: {
-                    title: "Sistema visual",
+                    title: "Criterios de interfaz",
                     bullets: [
-                        "Tokens por CSS variables (tema + acento por data-accent).",
-                        "Fondos abstractos por variantes (recolorizables).",
-                        "Radio amplio y sombras suaves para profundidad sin ruido.",
+                        "Diseño funcional orientado a operación rápida.",
+                        "Jerarquía clara para lectura inmediata.",
+                        "Minimización de pasos para completar un pedido.",
+                        "Optimización para uso continuo en entorno real de trabajo."
                     ],
                 },
             },
-        },
+        }
     ],
 };

@@ -1,4 +1,5 @@
 // src/components/contact/sections/ContactFormSection.jsx
+import { useState } from "react";
 import { Reveal } from "../../ui/animations/Reveal.jsx";
 import { SoftCard } from "../../ui/cards/SoftCard";
 import { Divider } from "../../ui/primitives/Divider";
@@ -16,19 +17,71 @@ export default function ContactFormSection({
     onSetArea,
     onSubmit,
 }) {
+    const [localStatus, setLocalStatus] = useState("idle");
+    const [honeypot, setHoneypot] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (honeypot) return;
+
+        if (localStatus === "loading") return;
+
+        if (!formData.firstName?.trim()) {
+            return alert("El nombre es obligatorio.");
+        }
+
+        if (!formData.email?.includes("@")) {
+            return alert("Email inválido.");
+        }
+
+        if (!formData.message || formData.message.trim().length < 10) {
+            return alert("El mensaje debe tener al menos 10 caracteres.");
+        }
+
+        try {
+            setLocalStatus("loading");
+
+            await new Promise((r) => setTimeout(r, 700));
+
+            await onSubmit(e);
+
+            setLocalStatus("success");
+        } catch (error) {
+            console.error(error);
+            setLocalStatus("error");
+        }
+    };
+
+    const isLoading = localStatus === "loading";
+
     return (
         <Reveal as="section" className={"h-full"} amount={0.22} once>
-            <SoftCard className="p-5  h-full md:p-6">
+            <SoftCard className="p-5 h-full md:p-6">
                 <div className="flex items-start justify-between gap-4">
                     <div className="space-y-1">
-                        <div className="text-(--text) font-semibold text-lg">{form.title}</div>
+                        <div className="text-(--text) font-semibold text-lg">
+                            {form.title}
+                        </div>
                         <Muted className="max-w-prose">{form.hint}</Muted>
                     </div>
                 </div>
 
                 <Divider className="my-4 opacity-60" />
 
-                <form onSubmit={onSubmit} className="space-y-4 flex flex-col">
+                <form
+                    onSubmit={handleSubmit}
+                    className="space-y-4 flex flex-col"
+                >
+                    <input
+                        type="text"
+                        name="website"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        className="hidden"
+                        tabIndex={-1}
+                        autoComplete="off"
+                    />
+
                     <div className="grid gap-4 md:grid-cols-2">
                         <Field
                             label="Nombre"
@@ -67,7 +120,9 @@ export default function ContactFormSection({
                     </div>
 
                     <div className="space-y-2">
-                        <div className="text-sm font-semibold text-(--text)">Área</div>
+                        <div className="text-sm font-semibold text-(--text)">
+                            Área
+                        </div>
                         <div className="flex flex-wrap gap-2">
                             {form.areas.map((a) => {
                                 const active = formData.area === a.key;
@@ -75,13 +130,16 @@ export default function ContactFormSection({
                                     <button
                                         key={a.key}
                                         type="button"
+                                        disabled={isLoading}
                                         onClick={() => onSetArea(a.key)}
-                                        className="rounded-full px-4 py-2 text-sm border border-(--border) transition"
+                                        className="rounded-full px-4 py-2 text-sm border border-(--border) transition disabled:opacity-50"
                                         style={{
                                             background: active
                                                 ? "rgb(var(--accent-rgb) / 0.10)"
                                                 : "rgb(255 255 255 / 0.02)",
-                                            color: active ? "var(--accent-solid)" : "var(--text)",
+                                            color: active
+                                                ? "var(--accent-solid)"
+                                                : "var(--text)",
                                         }}
                                     >
                                         {a.label}
@@ -101,39 +159,60 @@ export default function ContactFormSection({
                         required
                     />
 
-                    <div className="flex flex-col  sm:flex-row sm:items-center sm:justify-between pt-1">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-1">
                         <Muted className="text-sm">
                             {form.directText}{" "}
-                            <ThemedLink href={`mailto:${email}`}>{form.directLinkText}</ThemedLink>.
+                            <ThemedLink href={`mailto:${email}`}>
+                                {form.directLinkText}
+                            </ThemedLink>
+                            .
                         </Muted>
 
                         <div className="flex justify-end">
                             <button
                                 type="submit"
-                                className="
-                                rounded-full px-6 py-2 font-semibold w-fit
+                                disabled={isLoading}
+                                className="rounded-full px-6 py-2 font-semibold w-fit
                                 transition hover:brightness-110 active:brightness-105
-                                border border-(--border) text-(--text) flex
-                                "
+                                border border-(--border) text-(--text)
+                                disabled:opacity-60 disabled:cursor-not-allowed"
                                 style={{
                                     background: "var(--accent-solid)",
-                                    boxShadow: "0 0 22px rgb(var(--accent-rgb) / 0.25)",
+                                    boxShadow:
+                                        "0 0 22px rgb(var(--accent-rgb) / 0.25)",
                                 }}
                             >
-                                <span className="material-icons-outlined">{form.ctaText}</span>
+                                {isLoading ? "Enviando..." : form.ctaText}
                             </button>
                         </div>
                     </div>
 
-                    {status.type !== "idle" && (
+                    {localStatus === "success" && (
                         <div
                             className="mt-2 rounded-xl border border-(--border) px-4 py-3 text-sm"
-                            style={{ background: "rgb(var(--accent-rgb) / 0.08)" }}
+                            style={{
+                                background:
+                                    "rgb(var(--accent-rgb) / 0.08)",
+                            }}
                         >
-                            <span className="font-semibold" style={{ color: "var(--accent-solid)" }}>
+                            <span
+                                className="font-semibold"
+                                style={{
+                                    color: "var(--accent-solid)",
+                                }}
+                            >
                                 Listo
                             </span>
-                            <span className="text-(--text-muted)"> — {status.text}</span>
+                            <span className="text-(--text-muted)">
+                                {" "}
+                                — Mensaje enviado correctamente.
+                            </span>
+                        </div>
+                    )}
+
+                    {localStatus === "error" && (
+                        <div className="mt-2 text-sm text-red-400">
+                            Ocurrió un error. Intenta nuevamente.
                         </div>
                     )}
                 </form>
