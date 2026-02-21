@@ -6,7 +6,7 @@ import { Muted } from "../../ui/primitives/typography/Muted.jsx";
 import { SoftCard } from "../../ui/cards/SoftCard.jsx";
 import { FlowMap } from "../FlowMap.jsx";
 import { Lead } from "../../ui/primitives/typography/Lead.jsx";
-
+import { Link } from "react-router-dom";
 export default function AboutMapSection({ map, shortcuts, oneLiner, closing }) {
     const mapItems = map?.items ?? [];
 
@@ -32,8 +32,8 @@ export default function AboutMapSection({ map, shortcuts, oneLiner, closing }) {
 
                             <div className="mt-2 flex flex-col gap-2">
                                 {shortcuts?.portfolio?.href && (
-                                    <a
-                                        href={shortcuts.portfolio.href}
+                                    <Link
+                                        to={shortcuts.portfolio.href}
                                         className="rounded-xl border border-(--border) px-4 py-3 transition hover:brightness-110"
                                         style={{ background: "rgb(255 255 255 / 0.02)" }}
                                     >
@@ -43,25 +43,25 @@ export default function AboutMapSection({ map, shortcuts, oneLiner, closing }) {
                                         <div className="text-(--text-muted) text-sm">
                                             {shortcuts?.portfolio?.desc || "Proyectos y casos"}
                                         </div>
-                                    </a>
+                                    </Link>
                                 )}
 
                                 {closing?.links?.[0]?.href && (
-                                    <a
-                                        href={closing.links[0].href}
+                                    <Link
+                                        to={closing.links[0].href}
                                         className="rounded-xl border border-(--border) px-4 py-3 transition hover:brightness-110"
                                         style={{ background: "rgb(var(--accent-rgb) / 0.06)" }}
                                     >
                                         <div
                                             className="font-semibold"
                                             style={{ color: "var(--accent-solid)" }}
-                                        >
+                                        > 
                                             {shortcuts?.contactCta?.title || "Escribime"}
                                         </div>
                                         <div className="text-(--text-muted) text-sm">
                                             {closing.links[0].value}
                                         </div>
-                                    </a>
+                                    </Link>
                                 )}
                             </div>
                         </SoftCard>
