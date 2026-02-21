@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
-import avatar from "../assets/images/my-avatar.png";
+import { useEffect, useMemo, useState } from "react"; 
 import { useTheme } from "../app/providers/ThemeProvider";
 import { useAccent } from "../app/providers/AccentProvider";
 
