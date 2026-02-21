@@ -62,11 +62,11 @@ export function WorkCard({
                             w-35 h-8 rounded-full
                             font-semibold
                             hover:brightness-110 transition
-                            px-4 py-1
+                            px-4 py-1 text-nowrap
                             "
                         style={{
                             background: "var(--accent-solid)",
-                            color: "var(--bg-main)",
+                            color: "var(--text)",
                             boxShadow: "var(--accent-glow)",
                         }}
                     >

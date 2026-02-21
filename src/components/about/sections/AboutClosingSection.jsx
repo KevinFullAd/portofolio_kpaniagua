@@ -7,17 +7,6 @@ import { SoftCard } from "../../ui/cards/SoftCard.jsx";
 import { ContactPill } from "../../ui/ContactPill.jsx";
 import { Divider } from "../../ui/primitives/Divider.jsx";
 
-/**
- * Espera en closing (opcional):
- * closing.cv = {
- *   label?: "CV",
- *   title?: "Descargar CV",
- *   desc?: "PDF actualizado",
- *   href: "/assets/cv/kevin-paniagua-cv.pdf" | "https://...",
- *   fileName?: "Kevin_Paniagua_CV.pdf", // sugerido si es asset local
- * }
- */
-
 export default function AboutClosingSection({ closing }) {
     const paragraphs = closing?.paragraphs ?? [];
     const links = closing?.links ?? [];

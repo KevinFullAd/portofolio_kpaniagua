@@ -1,16 +1,8 @@
 import { ChevronDown } from "lucide-react";
 
-export default function SidebarHeader({ avatar, name, role, open, onToggleOpen }) {
+export default function SidebarHeader({name, role, open, onToggleOpen }) {
     return (
-        <div className="relative flex items-center gap-4 p-5">
-            {/* Avatar */}
-            <div className="w-16 h-16 rounded-2xl bg-[color:var(--bg-card)] border border-[color:var(--border)] flex items-center justify-center">
-                <img
-                    src={avatar}
-                    alt={name}
-                    className="w-16 h-16 rounded-xl object-cover"
-                />
-            </div>
+        <div className="relative flex items-center gap-4 p-5"> 
 
             {/* Info */}
             <div className="flex-1 min-w-0">
