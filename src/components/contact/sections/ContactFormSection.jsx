@@ -38,16 +38,43 @@ export default function ContactFormSection({
             return alert("El mensaje debe tener al menos 10 caracteres.");
         }
 
-        const response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
+        try {
+            setLocalStatus("loading");
 
-        if (!response.ok) {
-            throw new Error("Error enviando formulario");
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result?.error || "Error enviando formulario");
+            }
+
+            setLocalStatus("success");
+
+            // opcional: limpiar form
+            onChange({ target: { name: "firstName", value: "" } });
+            onChange({ target: { name: "lastName", value: "" } });
+            onChange({ target: { name: "email", value: "" } });
+            onChange({ target: { name: "subject", value: "" } });
+            onChange({ target: { name: "message", value: "" } });
+
+            setTimeout(() => {
+                setLocalStatus("idle");
+            }, 4000);
+
+        } catch (error) {
+            console.error(error);
+            setLocalStatus("error");
+
+            setTimeout(() => {
+                setLocalStatus("idle");
+            }, 4000);
         }
     };
 
@@ -170,7 +197,7 @@ export default function ContactFormSection({
                         <div className="flex justify-end">
                             <button
                                 type="submit"
-                                disabled={isLoading}
+                                disabled={isLoading || localStatus === "success"}
                                 className="rounded-full px-6 py-2 font-semibold w-fit
                                 transition hover:brightness-110 active:brightness-105
                                 border border-(--border) text-(--text)
