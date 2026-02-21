@@ -5,6 +5,7 @@ import { SoftCard } from "../../ui/cards/SoftCard";
 import { Divider } from "../../ui/primitives/Divider";
 import { Muted } from "../../ui/primitives/typography/Muted";
 import { ThemedLink } from "../../ui/primitives/ThemedLink";
+import SubmitBtn from "../SubmitBtn.jsx";
 import TextArea from "../../ui/primitives/typography/TextArea";
 import Field from "../../ui/primitives/form/Field";
 
@@ -197,18 +198,20 @@ export default function ContactFormSection({
                         <div className="flex justify-end">
                             <button
                                 type="submit"
-                                disabled={isLoading || localStatus === "success"}
+                                disabled={isLoading}
                                 className="rounded-full px-6 py-2 font-semibold w-fit
-                                transition hover:brightness-110 active:brightness-105
-                                border border-(--border) text-(--text)
-                                disabled:opacity-60 disabled:cursor-not-allowed"
+    transition-all duration-300
+    border border-(--border) text-(--text)
+    disabled:opacity-60 disabled:cursor-not-allowed"
                                 style={{
                                     background: "var(--accent-solid)",
-                                    boxShadow:
-                                        "0 0 22px rgb(var(--accent-rgb) / 0.25)",
+                                    boxShadow: "0 0 22px rgb(var(--accent-rgb) / 0.25)",
                                 }}
                             >
-                                {isLoading ? "Enviando..." : form.ctaText}
+                                <SubmitBtn
+                                    status={localStatus}
+                                    text={form.ctaText}
+                                />
                             </button>
                         </div>
                     </div>
