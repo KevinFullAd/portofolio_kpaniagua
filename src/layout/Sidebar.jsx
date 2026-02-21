@@ -40,8 +40,7 @@ export default function Sidebar() {
                 shadow-(--shadow) 
                 "
             >
-                <SidebarHeader
-                    avatar={avatar}
+                <SidebarHeader 
                     name="Kevin Paniagua"
                     role="Desarrollador web"
                     open={open}
