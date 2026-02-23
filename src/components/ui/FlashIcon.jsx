@@ -19,6 +19,7 @@ export default function FlashIcon({
             onMouseLeave={() => setPressed(false)}
             onTouchStart={() => setPressed(true)}
             onTouchEnd={() => setPressed(false)}
+            target="_blank"
             onContextMenu={(e) => e.preventDefault()}
             className={`inline-flex items-center transition-colors ${className}`}
             style={{  

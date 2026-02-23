@@ -55,21 +55,18 @@ export default function SidebarBody({
             </div>
 
             {/* Divider */}
-            <div className="h-px bg-[color:var(--border)] mx-5" />
+            <div className="h-px bg-(--border) mx-5" />
 
             {/* Footer */}
             <div className="p-5 flex items-center justify-between text-(--text-muted)">
                 {/* Social */}
                 <div className="flex gap-4">
-                    <FlashIcon flashColor="var(--accent-solid)">
+                    <FlashIcon flashColor="var(--accent-solid)" href="https://www.linkedin.com/in/kevinpani">
                         <Linkedin />
                     </FlashIcon>
-                    <FlashIcon flashColor="var(--accent-solid)">
+                    <FlashIcon flashColor="var(--accent-solid)" href="https://github.com/KevinFullAd">
                         <Github />
-                    </FlashIcon>
-                    <FlashIcon flashColor="var(--accent-solid)">
-                        <SiWhatsapp />
-                    </FlashIcon>
+                    </FlashIcon> 
                 </div>
 
                 {/* Actions */}
