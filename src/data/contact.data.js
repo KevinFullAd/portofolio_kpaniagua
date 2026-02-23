@@ -1,6 +1,6 @@
 // src/data/contact.data.js
 export const contactData = {
-    email: "kevin.paniagua@gmail.com",
+    email: "paniagua.kevin.damian@gmail.com",
 
     hero: {
         eyebrow: "Contacto",
@@ -40,8 +40,8 @@ export const contactData = {
         quickActions: [
             {
                 title: "Email",
-                subtitle: "kevin.paniagua@gmail.com",
-                href: "mailto:kevin.paniagua@gmail.com",
+                subtitle: "paniagua.kevin.damian@gmail.com",
+                href: "mailto:paniagua.kevin.damian@gmail.com",
                 icon: "mail",
                 primary: true,
             },

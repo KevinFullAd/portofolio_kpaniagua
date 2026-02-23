@@ -128,7 +128,7 @@ export const resumeData = {
             "Mi objetivo es crecer como desarrollador integral, con foco en Node.js, NestJS y arquitectura de software.",
         ],
         cv: {
-            href: "/assets/cv/kevin_paniagua_cv.pdf",
+            href: "/cv/kevin_paniagua_cv.pdf",
             title: "Descargar CV",
             desc: "PDF actualizado",
             fileName: "Kevin_Paniagua_cv.pdf",

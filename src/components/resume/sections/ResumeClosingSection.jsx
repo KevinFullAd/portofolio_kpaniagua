@@ -23,7 +23,7 @@ export default function ResumeClosingSection({ closing }) {
                 <Muted>{closing.description}</Muted>
                 {/* CTA CV (primero) */}
                 {hasCv && (
-                    <SoftCard className="relative !bg-red-500 overflow-hidden">
+                    <SoftCard className="relative overflow-hidden">
                         {/* halo sutil */}
                         <span
                             className="pointer-events-none absolute -top-8 -right-10 h-32 w-32 rounded-full blur-2xl"
@@ -62,11 +62,11 @@ export default function ResumeClosingSection({ closing }) {
                                     target={isExternal(cv.href) ? "_blank" : undefined}
                                     rel={isExternal(cv.href) ? "noreferrer" : undefined}
                                     className="
-                          group inline-flex w-full items-center justify-between
-                          rounded-xl border border-(--border)
-                          px-4 py-3 transition
-                          hover:brightness-110
-                        "
+                                    group inline-flex w-full items-center justify-between
+                                    rounded-xl border border-(--border)
+                                    px-4 py-3 transition
+                                    hover:brightness-110
+                                    "
                                     style={{
                                         background: "rgb(var(--accent-rgb) / 0.10)",
                                         boxShadow: "0 0 18px rgb(var(--accent-rgb) / 0.14)",

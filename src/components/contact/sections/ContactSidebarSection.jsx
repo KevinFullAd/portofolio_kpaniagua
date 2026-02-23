@@ -29,7 +29,7 @@ export default function ContactSidebarSection({ email, sidebar }) {
                 <SoftCard className="mt">
                     <div className="text-(--text) font-semibold">{sidebar.fastTitle}</div>
                     <Muted className="mt-1">{sidebar.fastLead}</Muted>
-
+                        
                     <Divider className="my-4 opacity-60" />
 
                     <div className="space-y-3">

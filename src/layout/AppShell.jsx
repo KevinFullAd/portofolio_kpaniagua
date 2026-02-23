@@ -4,11 +4,16 @@ import Navbar from "./Navbar.jsx";
 import MobileNavbar from "./NavbarMobile.jsx";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function AppShell() {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const reduce = useReducedMotion();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [location.pathname]);
 
     const items = [
         { id: "about", path: "/about" },
